@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>Stray Kids: Profile</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+		:root{
+			--accent:#aaaaff;
+			--bg:#fff;
+			--text:#000;
+		}
+		*{box-sizing:border-box;margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,'Noto Sans',sans-serif;}
+		body{background:var(--bg);color:var(--main-color);line-height:1.7;}
+		header{position:fixed;top:0;left:0;width:100%;padding:14px 20px;background:var(--bg);border-bottom:1px solid #e6e6e6;display:flex;align-items:center;z-index:1000}
+		.hamburger{background:none;border:none;cursor:pointer}
+		.hamburger svg{width:24px;height:24px;stroke:var(--text)}
+        section{max-width:1000px;margin:3rem auto;padding:0 1rem;}
+        h2{margin-bottom:1rem;font-size:2rem;border-left:5px solid var(--accent);padding-left:.5rem;margin-top: 5rem;}
+        .cards{display:grid;gap:1.5rem;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));}
+        .card{background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 2px 6px rgba(0,0,0,.1);transition:.3s;margin-top: 40px;}
+        .card:hover{transform:translateY(-4px);}
+        .card img{width:100%;height:460px;object-fit:cover;}
+        .card .info{padding:1rem;}
+		.albums li,.awards li,{margin-bottom:.75rem;}
+		
+		.cards1{display:flex;gap:1.5rem;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));flex-direction: column;align-items: center;}
+		.card1{background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 2px 6px rgba(0,0,0,.1);transition:.3s;width: 500px;}
+		.card1:hover{transform:translateY(-4px);}
+		.card1 img{width:100%;height:600px;object-fit:cover;}
+		.card1 .info1{padding:1rem;}
+		
+
+	/* 抽屉 */
+		.sidenav{
+			height:100%;
+			width:0;
+			position:fixed;
+			z-index:2000;
+			top:0;
+			left:0;
+			background:#fafafa;
+			overflow-x:hidden;
+			transition:.35s;
+			padding-top:60px;
+			box-shadow:2px 0 8px rgba(0,0,0,.15);
+		}
+		.sidenav .closebtn{
+			position:absolute;
+			top:14px;
+			right:20px;
+			font-size:32px;
+			color:var(--text);
+			cursor:pointer;
+		}
+		.sidenav .logo{text-align:center;margin-bottom:30px;font-size:24px;font-weight:bold}
+		.sidenav ul{list-style:none}
+		.sidenav ul li{border-bottom:1px solid #e6e6e6}
+		.sidenav ul li:last-child{border-bottom:none}
+		.sidenav ul li a{
+			display:block;
+			padding:18px 26px;
+			color:var(--text);
+			text-decoration:none;
+			font-size:16px;
+			transition:.2s;
+		}
+		.sidenav ul li a:hover{background:var(--accent);color:#fff}
+
+		/* 页脚（仅版权） */
+		footer{
+			margin-top:auto;
+			text-align:center;
+			padding:20px;
+			font-size:12px;
+			color:#666;
+			border-top:1px solid #e6e6e6;
+		}
+		
+		/* 两列容器 */
+		.member-2col{
+		  display: grid;
+		  grid-template-columns: repeat(2, 1fr);
+		  gap: 24px;
+		  max-width: 880px;
+		  margin: 0 auto;
+		}
+		
+</style>
+</head>
+
+<body>
+		<header>
+		  <button class="hamburger" onclick="openNav()" aria-label="menu">
+			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+		  </button>
+		</header>
+
+		<nav id="mysidenav" class="sidenav">
+		  <span class="closebtn" onclick="closeNav()">&times;</span>
+		  <div class="logo">Stray Kids</div>
+		  <ul>
+			<li><a href='Home Page.html'>HOME PAGE</a></li>
+			<li><a href="Profile.html">PROFILE</a></li>
+			<li><a href='DiscographyList.html'>DISCOGRAPHY</a></li>
+			<li><a href='Awards.html'>AWARDS</a></li>
+			<li><a href="/Default/Video">VIDEO</a></li>
+			<li><a href="/Default/NoticeList">NOTICE</a></li>
+			<li><a href="/Default/Schedule">SCHEDULE</a></li>
+		  </ul>
+		</nav>
+		
+	<!-- 组合介绍 -->
+	<section id="group">
+	    <h2>组合介绍</h2>
+	    <div class="cards1">
+	        <div class="card1">
+	            <img src='img/Profile/SKZ.png'alt="StrayKids">
+	            <div class="info1">
+	                <strong>Stray Kids</strong>
+	                是韩国JYP Entertainment于2018年推出的男子演唱组合，由方灿、李旻浩、徐彰彬、黄铉辰、韩知城、李龙馥、金昇玟、梁精寅8位成员组成。<br>
+	                团名“Stray Kids”由成员构思，原意为“迷路的孩子”，衍生出共同追求梦想、寻找曙光的理念。
+	            </div>
+	        </div>
+		</div>
+	</section>	
+	
+	
+	<!-- 成员介绍 -->
+	<section id="members">
+	    <h2>成员介绍</h2>
+	    <div class="member-2col">
+	        <div class="card">
+	            <img src='img/Profile/BANGCHAN1.jpg' alt="方燦">
+	            <div class="info">
+	                <strong>方灿 Bang Chan（队长）</strong><br>
+	                1997.10.03<br>
+					3 RACHA<br>
+					Instagram: @gnabnahc
+	            </div>
+	        </div>
+	        <div class="card">
+	            <img src='img/Profile/LeeKnow1.jpg' alt="Lee Know">
+	            <div class="info">
+	                <strong>李旻浩 Lee Know</strong><br>
+	                1998.10.25<br>
+					Dance RACHA<br>
+					Instagram: @t.leeknowsaurus
+	            </div>
+	        </div>
+	        <div class="card">
+	            <img src='img/Profile/Changbin1.jpg' alt="彰彬">
+	            <div class="info">
+	                <strong>徐彰彬 Changbin</strong><br>
+	                1999.08.11<br>
+					3 RACHA<br>
+					Instagram: @jutdwae
+	            </div>
+	        </div>
+	        <div class="card">
+	            <img src='img/Profile/Hyunjin1.jpg' alt="鉉辰">
+	            <div class="info">
+	                <strong>黄铉辰 Hyunjin</strong><br>
+	                2000.03.20<br>
+					Dance RACHA<br>
+					Instagram: @hynjinnnn
+	            </div>
+	        </div>
+	        <div class="card">
+	            <img src='img/Profile/HAN1.jpg' alt="HAN">
+	            <div class="info">
+	                <strong>韩知城 HAN</strong><br>
+	                2000.09.14<br>
+					3 RACHA<br>
+					Instagram: @_doolsetnet
+	            </div>
+	        </div>
+	        <div class="card">
+	            <img src='img/Profile/Felix1.jpg' alt="Felix">
+	            <div class="info">
+	                <strong>李龙馥 Felix</strong><br>
+	                2000.09.15<br>
+					Dance RACHA<br>
+					Instagram: @yong.lixx
+	            </div>
+	        </div>
+	        <div class="card">
+	            <img src='img/Profile/Seungmin1.jpg' alt="昇玟">
+	            <div class="info">
+	                <strong>金昇玟 Seungmin</strong><br>
+	                2000.09.22<br>
+					Vocal RACHA<br>
+					Instagram: @miniverse.___
+	            </div>
+	        </div>
+	        <div class="card">
+	            <img src='img/Profile/I.N1.jpg' alt="I.N">
+	            <div class="info">
+	                <strong>梁精寅 I.N</strong><br>
+	                2001.02.08<br>
+					Vocal RACHA<br>
+					Instagram: @i.2.n.8
+	            </div>
+	        </div>
+	    </div>
+	</section>
+	
+	
+	
+	
+	
+<footer>
+  Copyright &copy; JYP ENTERTAINMENT Co., Ltd. All rights reserved.
+</footer>
+
+<script>
+function openNav()  { document.getElementById('mysidenav').style.width = '280px'; }
+function closeNav() { document.getElementById('mysidenav').style.width = '0';   }
+</script>
+</body>
+</html>

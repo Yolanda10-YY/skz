@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>Album Detail – Stray Kids</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+		:root{
+			--accent:#aaaaff;
+			--bg:#fff;
+			--text:#000;
+			}
+		*{box-sizing:border-box;margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,'Noto Sans',sans-serif;}
+		body{
+			margin:0;
+			font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;
+			background:var(--bg);
+			color:var(--text);
+			align-items: center;
+			flex-direction: column;
+			padding: 20px;
+			line-height: 1.6;
+			}
+		header{
+			position:sticky;
+			top:0;background:var(--bg);
+			border-bottom:1px solid #e6e6e6;
+			padding:12px 20px;
+			display:flex;
+			justify-content:space-between;
+			align-items:center;
+			z-index:1000
+			}
+		header h1{
+			font-size:1.5rem;
+			color:var(--accent);
+			}
+		section{
+			margin:2rem auto;
+			padding:0 1rem;
+			text-align:center;
+			max-width: var(--cover-width, 300px);
+			}
+		section img{
+			max-width:100%;
+			border-radius:8px;
+			margin-bottom:1rem;
+			}
+		
+		.back-btn {
+		    position: fixed;
+		    bottom: 0;
+		    left: 0;
+		    right: 0;
+		    background: #fff;
+		    border-top: 1px solid #ddd;
+		    text-align: center;
+		    padding: 1rem;
+		}
+		.back-btn button {
+		    padding: 0.7rem 2.4rem;
+		    border: 1px solid var(--accent);
+		    background: #fff;
+		    color: var(--accent);
+		    border-radius: 20px;
+		    font-size: 1rem;
+		    cursor: pointer;
+		    transition: background-color 0.3s;
+		}
+		.back-btn button:hover {
+		    background: var(--accent);
+		    color: #fff;
+		}
+		
+		.hamburger{background:none;border:none;cursor:pointer}
+		.hamburger svg{width:24px;height:24px;stroke:var(--text)}
+		
+		/* 抽屉 */
+		.sidenav{
+			height:100%;
+			width:0;
+			position:fixed;
+			z-index:2000;
+			top:0;
+			left:0;
+			background:#fafafa;
+			overflow-x:hidden;
+			transition:.35s;
+			padding-top:60px;
+			box-shadow:2px 0 8px rgba(0,0,0,.15);
+		}
+		.sidenav .closebtn{
+			position:absolute;
+			top:14px;
+			right:20px;
+			font-size:32px;
+			color:var(--text);
+			cursor:pointer;
+		}
+		.sidenav .logo{text-align:center;margin-bottom:30px;font-size:24px;font-weight:bold}
+		.sidenav ul{list-style:none}
+		.sidenav ul li{border-bottom:1px solid #e6e6e6}
+		.sidenav ul li:last-child{border-bottom:none}
+		.sidenav ul li a{
+			display:block;
+			padding:18px 26px;
+			color:var(--text);
+			text-decoration:none;
+			font-size:16px;
+			transition:.2s;
+		}
+		.sidenav ul li a:hover{background:var(--accent);color:#fff}
+		
+		h1 {
+		    font-size: 2.2rem;
+		    margin-bottom: 0.5rem;
+			text-align: left;
+		}
+		h2{
+			text-align: left;
+		}
+		.cover {
+		    width: 100%;
+		    max-width: 300px;
+		    border-radius: 8px;
+		    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+		    margin-bottom: 1.2rem;
+		}
+		.meta {
+			width: 100%;
+		    margin-bottom: 1.2rem;
+			text-align:right;
+			padding-left:0;
+			max-width: var(--cover-width, 300px);
+		}
+		.meta p {
+		    margin: 0.2rem 0;
+		}
+		
+		.tracklist{
+		    list-style:none;
+		    padding:0;
+		    margin:0 auto 6rem;   /* 关键：左右 auto 居中 */
+		    width:max-content;    /* 让列表宽度由内容决定，再整体居中 */
+		    max-width: 580px;
+			text-align: left; /* 确保文本左对齐 */
+		}
+		.tracklist li{
+			 line-height: 1.6;
+			 text-align: left !important;
+			   padding-left: 0 !important;
+			   margin-left: 0 !important;
+			   list-style: none !important;
+			   
+		}
+		
+		.main{
+		  display:flex;
+		  max-width:800px;
+		  margin:2rem auto;
+		  gap:4rem;
+		  align-items:flex-start;
+		}
+		.left{
+		  flex:0 0 300px;     /* 左列固定宽度 */
+		  text-align:left;
+		  margin-left: 0;
+		    padding-left: 0;
+		    align-self: flex-start;
+			
+		}
+		.right{
+		  flex:1;             /* 右列自适应 */
+		  text-align:left;    /* 文字左对齐 */
+		  margin-top: 150px;
+		}
+		@media(max-width:768px){
+		  .main{flex-direction:column;}
+		  .left,.right{flex:1 1 100%;}
+		}
+		
+		.intro {
+		    text-align: left; /* 确保文本左对齐 */
+		    margin-bottom: 1.2rem; /* 添加一些底部外边距 */
+		}
+		
+		.band-name {
+		    font-family: 'Calibri', Arial, sans-serif; /* 使用无衬线字体 */
+		    font-size: 1.2rem; /* 修改字体大小 */
+		    line-height: 1; /* 调整行高以提高可读性 */
+		    margin-bottom: 0.5rem; /* 添加底部外边距 */
+		    text-align: left; /* 确保文本左对齐 */
+		}
+</style>
+</head>
+<body>
+		<header>
+		  <button class="hamburger" onclick="openNav()" aria-label="menu">
+		  			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+						<line x1="3" y1="12" x2="21" y2="12"></line>
+						<line x1="3" y1="6" x2="21" y2="6"></line>
+						<line x1="3" y1="18" x2="21" y2="18"></line></svg>
+		  </button>
+		  <h1 id="album-title">Album</h1>
+		</header>
+
+		<nav id="mysidenav" class="sidenav">
+			<span class="closebtn" onclick="closeNav()">&times;</span>
+			<div class="logo">Stray Kids</div>
+			<ul>
+				<li><a href='Home Page.html'>HOME PAGE</a></li>
+				<li><a href="Profile.html">PROFILE</a></li>
+				<li><a href='DiscographyList.html'>DISCOGRAPHY</a></li>
+				<li><a href='Awards.html'>AWARDS</a></li>
+				<li><a href="/Default/Video">VIDEO</a></li>
+				<li><a href="/Default/NoticeList">NOTICE</a></li>
+				<li><a href="/Default/Schedule">SCHEDULE</a></li>
+			</ul>
+		</nav>
+
+
+		<section class="main">
+			<div class="left">
+				<img class="cover" id="album-cover" src="" alt="Album Cover">
+				<h3><p><strong>Release Date:</strong> </h3><span id="album-date"></span></p>
+			</div>
+				
+			<div class="right">
+				<strong><p class="band-name">Stray Kids</p></strong>
+				<h1 id="album-title2"></h1>
+				<div class="intro" id="album-intro"></div>
+				<h2>TRACK LIST</h2>
+				<ul class="tracklist" id="tracklist">
+					<li>Loading…</li>
+				</ul>
+			</div>
+		</section>	
+			<div class="back-btn">
+				<button onclick="history.back()">Back</button>
+			</div>
+		
+
+
+		<script>
+		function openNav(){document.getElementById('mysidenav').style.width='280px';}
+		function closeNav(){document.getElementById('mysidenav').style.width='0';}
+		
+		// 读取本地存储的数据
+		const albumData = JSON.parse(localStorage.getItem('albumData') || '{}');
+		
+		// 设置默认值
+		const title = albumData.title || "Unknown Album";
+		const date = albumData.date || "Unknown Date";
+		const cover = albumData.cover || "img/default_cover.jpg";
+		const intro = albumData.intro || '';
+		const rawTracks = albumData.tracks || '';
+		const tracks = rawTracks.split(';').map(t => t.split('|'));
+		
+		// 渲染页面
+		document.getElementById('album-title').textContent = title;
+		document.getElementById('album-title2').textContent = title;
+		document.getElementById('album-date').textContent = date;
+		document.getElementById('album-cover').src = cover;
+		document.getElementById('album-intro').innerHTML = intro.replace(/\\n/g, '<br>');
+		
+		const ul = document.getElementById('tracklist');
+		ul.innerHTML = '';
+		tracks.forEach(([song, desc], index) => {
+		  ul.insertAdjacentHTML('beforeend', `
+		    <li style="text-align: left; padding-left: 0; margin-left: 0; margin-bottom: 1.2rem;">
+		      <strong>${song}</strong><br><small>${desc}</small>
+		    </li>
+		    ${index < tracks.length - 1 ? '<hr style="border: none; border-top: 1px solid #e0e0e0; margin: 1rem 0;">' : ''}
+		  `);
+		});
+
+
+		/* 示例曲库，可扩展 */
+		// const tracks={
+		//   'KARMA':['01 BLEEP','02 CEREMONY *Title','03 CREED','04 MESS','05 In My head','06 Half Time','07 Phoenix', '08 Ghost','09 0801','10 CEREMONY (Festival Ver.)','11 CEREMONY(English Ver.)'],
+		//   'Hollow':['01 Hollow ','02 Parade','03 Never Alone','04 just a little','05 宿命'],
+		//   'Mixtape:dominATE':['01 GIANT (Korean Ver.) *Title','02 Burnin’ Tires (창빈 & 아이엔)','03 Truman (한 & 필릭스)','04 ESCAPE (방찬 & 현진)','05 CINEMA']
+		// };
+		// const list = document.getElementById('tracklist');
+		// 			tracklist.innerHTML = ''; // 清空
+		// 			if (tracks[title]) {
+		// 				tracks[title].forEach(track => {
+		// 					list.insertAdjacentHTML('beforeend', `<li>${track}</li>`);
+		// 				});
+		// 			} else {
+		// 				list.insertAdjacentHTML('beforeend', `<li>No tracks available</li>`);
+		// 			}
+					
+		// const list = document.getElementById('tracklist');
+		//     list.innerHTML = '';
+		//     tracks.forEach(([song, sub]) => {
+		//       const li = document.createElement('li');
+		//       li.innerHTML = `<div class="song">${song}</div><div class="subtitle">${sub}</div>`;
+		//       list.appendChild(li);
+		//     });
+		
+		// const ul = document.getElementById('tracklist');
+		// ul.innerHTML = '';
+		// tracks.forEach(([song, desc], index) => {
+		//   ul.insertAdjacentHTML('beforeend', `
+		//     <li style="text-align: left; padding-left: 0; margin-left: 0; margin-bottom: 1.2rem;">
+		//       <strong>${song}</strong><br><small>${desc}</small>
+		//     </li>
+		//     ${index < tracks.length - 1 ? '<hr style="border: none; border-top: 1px solid #e0e0e0; margin: 1rem 0;">' : ''}
+		//   `);
+		// });
+		</script>
+</body>
+</html>

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>Stray Kids</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+		:root{
+			--accent:#aaaaff;
+			--bg:#fff;
+			--text:#000;
+		}
+		*{box-sizing:border-box;margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,'Noto Sans',sans-serif;}
+		body{background:var(--bg);color:var(--main-color);line-height:1.7;}
+		header{position:fixed;top:0;left:0;width:100%;padding:14px 20px;background:var(--bg);border-bottom:1px solid #e6e6e6;display:flex;align-items:center;z-index:1000}
+		.hamburger{background:none;border:none;cursor:pointer}
+		.hamburger svg{width:24px;height:24px;stroke:var(--text)}
+        section{max-width:1000px;margin:3rem auto;padding:0 1rem;}
+        h2{margin-bottom:1rem;font-size:2rem;border-left:5px solid var(--accent);padding-left:.5rem;margin-top: 5rem;}
+        .cards{display:grid;gap:1.5rem;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));}
+        .card{background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 2px 6px rgba(0,0,0,.1);transition:.3s;margin-top: 40px;}
+        .card:hover{transform:translateY(-4px);}
+        .card img{width:100%;height:260px;object-fit:cover;}
+        .card .info{padding:1rem;}
+		.albums li,.awards li,{margin-bottom:.75rem;}
+		
+		.cards1{display:flex;gap:1.5rem;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));flex-direction: column;align-items: center;}
+		.card1{background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 2px 6px rgba(0,0,0,.1);transition:.3s;width: 500px;}
+		.card1:hover{transform:translateY(-4px);}
+		.card1 img{width:100%;height:600px;object-fit:cover;}
+		.card1 .info1{padding:1rem;}
+
+		/* 抽屉 */
+		.sidenav{
+			height:100%;
+			width:0;
+			position:fixed;
+			z-index:2000;
+			top:0;
+			left:0;
+			background:#fafafa;
+			overflow-x:hidden;
+			transition:.35s;
+			padding-top:60px;
+			box-shadow:2px 0 8px rgba(0,0,0,.15);
+		}
+		.sidenav .closebtn{
+			position:absolute;
+			top:14px;
+			right:20px;
+			font-size:32px;
+			color:var(--text);
+			cursor:pointer;
+		}
+		.sidenav .logo{text-align:center;margin-bottom:30px;font-size:24px;font-weight:bold}
+		.sidenav ul{list-style:none}
+		.sidenav ul li{border-bottom:1px solid #e6e6e6}
+		.sidenav ul li:last-child{border-bottom:none}
+		.sidenav ul li a{
+			display:block;
+			padding:18px 26px;
+			color:var(--text);
+			text-decoration:none;
+			font-size:16px;
+			transition:.2s;
+		}
+		.sidenav ul li a:hover{background:var(--accent);color:#fff}
+
+		/* 页脚（仅版权） */
+		footer{
+			margin-top:auto;
+			text-align:center;
+			padding:20px;
+			font-size:12px;
+			color:#666;
+			border-top:1px solid #e6e6e6;
+		}
+		
+		/* 两行布局容器 */
+		.member-grid-2row{
+		  display: grid;
+		  grid-template-columns: repeat(4, 1fr);
+		  grid-template-rows: repeat(2, 1fr);
+		  gap: 20px;
+		  max-width: 1000px;
+		  margin: 0 auto;
+		}
+		
+		/* 手机端单列 */
+		@media(max-width: 768px){
+		  .card1 .member-grid-2row{
+		    grid-template-columns: 1fr;
+		    grid-template-rows: auto;
+		  }
+		}
+</style>
+</head>
+
+<body>
+		<header>
+		  <button class="hamburger" onclick="openNav()" aria-label="menu">
+			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+		  </button>
+		</header>
+
+		<nav id="mysidenav" class="sidenav">
+		  <span class="closebtn" onclick="closeNav()">&times;</span>
+		  <div class="logo">Stray Kids</div>
+		  <ul>
+			<li><a href='Home Page.html'>HOME PAGE</a></li>
+			<li><a href="Profile.html">PROFILE</a></li>
+			<li><a href='DiscographyList.html'>DISCOGRAPHY</a></li>
+			<li><a href='Awards.html'>AWARDS</a></li>
+			<li><a href="/Default/Video">VIDEO</a></li>
+			<li><a href="/Default/NoticeList">NOTICE</a></li>
+			<li><a href="/Default/Schedule">SCHEDULE</a></li>
+		  </ul>
+		</nav>
+		
+	<!-- 组合介绍 -->
+	<section id="group">
+	    <h2>组合介绍</h2>
+	    <div class="cards1">
+	        <div class="card1">
+	            <img src='img/Profile/SKZ.png'alt="StrayKids">
+	            <div class="info1">
+	                <strong>Stray Kids</strong>
+	                是韩国JYP Entertainment于2018年推出的男子演唱组合，由方灿、李旻浩、徐彰彬、黄铉辰、韩知城、李龙馥、金昇玟、梁精寅8位成员组成。<br>
+	                团名“Stray Kids”由成员构思，原意为“迷路的孩子”，衍生出共同追求梦想、寻找曙光的理念。
+	            </div>
+	        </div>
+		</div>
+	</section>	
+	
+	
+	<!-- 成员介绍 -->
+	<section id="members">
+	    <h2>成员介绍</h2>
+	    <div class="member-grid-2row">
+	        <div class="card">
+	            <img src='img/Profile/BANGCHAN1.jpg' alt="方燦">
+	            <div class="info">
+	                <strong>方灿 Bang Chan（队长）</strong><br>
+	                1997.10.03<br>
+					3 RACHA
+	            </div>
+	        </div>
+	        <div class="card">
+	            <img src='img/Profile/LeeKnow1.jpg' alt="Lee Know">
+	            <div class="info">
+	                <strong>李旻浩 Lee Know</strong><br>
+	                1998.10.25<br>
+					Dance RACHA
+	            </div>
+	        </div>
+	        <div class="card">
+	            <img src='img/Profile/Changbin1.jpg' alt="彰彬">
+	            <div class="info">
+	                <strong>徐彰彬 Changbin</strong><br>
+	                1999.08.11<br>
+					3 RACHA
+	            </div>
+	        </div>
+	        <div class="card">
+	            <img src='img/Profile/Hyunjin1.jpg' alt="鉉辰">
+	            <div class="info">
+	                <strong>黄铉辰 Hyunjin</strong><br>
+	                2000.03.20<br>
+					Dance RACHA
+	            </div>
+	        </div>
+	        <div class="card">
+	            <img src='img/Profile/HAN1.jpg' alt="HAN">
+	            <div class="info">
+	                <strong>韩知城 HAN</strong><br>
+	                2000.09.14<br>
+					3 RACHA
+	            </div>
+	        </div>
+	        <div class="card">
+	            <img src='img/Profile/Felix1.jpg' alt="Felix">
+	            <div class="info">
+	                <strong>李龙馥 Felix</strong><br>
+	                2000.09.15<br>
+					Dance RACHA
+	            </div>
+	        </div>
+	        <div class="card">
+	            <img src='img/Profile/Seungmin1.jpg' alt="昇玟">
+	            <div class="info">
+	                <strong>金昇玟 Seungmin</strong><br>
+	                2000.09.22<br>
+					Vocal RACHA
+	            </div>
+	        </div>
+	        <div class="card">
+	            <img src='img/Profile/I.N1.jpg' alt="I.N">
+	            <div class="info">
+	                <strong>梁精寅 I.N</strong><br>
+	                2001.02.08<br>
+					Vocal RACHA
+	            </div>
+	        </div>
+	    </div>
+	</section>
+	
+	<!-- 专辑汇总 -->
+	<section id="discography">
+	    <h2>专辑汇总</h2>
+	    <ul class="albums">
+			<li><strong>2018.1.8</strong> 先行专辑 ★ Mixtape</li>
+	        <li><strong>2018.3.26</strong> 迷你专辑 ★ I am NOT</li>
+			<li><strong>2018.8.6</strong> 迷你专辑 ★ I am WHO</li>
+			<li><strong>2018.10.22</strong> 迷你专辑 ★ I am YOU</li>
+			<li><strong>2019.3.25</strong> 迷你专辑 ★ Clé : Miroh</li>
+			<li><strong>2019.6.19</strong> 迷你专辑 ★ Clé : Miroh</li>
+			<li><strong>2019.12.9</strong> 迷你专辑 ★ Clé : LEVANTER</li>
+			<li><strong>2019.12.9</strong> 数码单曲 ★ Mixtape: Gone Days</li>
+			<li><strong>2020.3.18</strong> 重录专辑 ★ SKZ2020</li>
+			<li><strong>2020.3.25</strong> 数码单曲 ★ Mixtape: On Track</li>
+			<li><strong>2020.6.17</strong> 正规专辑1 ★ GO生</li>
+			<li><strong>2020.9.14</strong> 后续专辑 ★ IN生</li>
+			<li><strong>2020.10.27</strong> 日本迷你专辑 ★ All in</li>
+			<li><strong>2021.8.23</strong> 正规专辑2 ★ NOEASY</li>
+			<li><strong>2021.10.13</strong> 日本EP ★ Scar</li>
+			<li><strong>2021.11.29</strong> 特别专辑 ★ Christmas Evel</li>
+			<li><strong>2021.12.23</strong> 重录专辑 ★ SKZ 2021</li>
+			<li><strong>2022.3.18</strong> 迷你专辑 ★ ODDINARY</li>
+	        <li><strong>2022.6.22</strong> 日本迷你专辑 ★ Circus</li>
+			<li><strong>2022.10.21</strong> 迷你专辑 ★ MAXIDENT</li>
+			<li><strong>2022.11.21</strong> REPLAY汇总 ★ SKZ-REPLAY</li>
+			<li><strong>2023.2.22</strong> 日本正规专辑1 ★ The Sound</li>
+			<li><strong>2023.6.2</strong> 正规专辑3 ★ 5-STAR</li>
+			<li><strong>2023.9.6</strong> 日本EP ★ Social Path /Super Bowl</li>
+			<li><strong>2023.11.10</strong> 迷你专辑 ★ Rock-Star</li>
+			<li><strong>2024.5.10</strong> 英文单曲 ★ Lose my breath</li>
+			<li><strong>2024.7.19</strong> 迷你专辑 ★ ATE</li>
+			<li><strong>2024.11.13</strong> 日本正规专辑2 ★ Giant</li>
+			<li><strong>2024.12.13</strong> 特别专辑 ★ HOP</li>
+			<li><strong>2025.3.21</strong>  ★ Mixtape: dominATE</li>
+			<li><strong>2025.6.18</strong> 日本迷你专辑 ★ Hollow</li>
+			<li><strong>2025.8.22</strong> 正规专辑4 ★ KARMA</li>
+			<li><strong></strong>  ★ </li>
+			
+	    </ul>
+	</section>
+	
+	<!-- 获奖情况 -->
+	<section id="awards">
+	    <h2>获奖情况（节选）</h2>
+	    <ul class="awards">
+	        <li>2023 MAMA Awards — 最佳男团、年度专辑</li>
+	        <li>2023 Billboard 200 — 3张专辑同时入榜创K-POP纪录</li>
+	        <li>2022 Asia Artist Awards — 年度歌手大赏</li>
+	        <li>2022 MTV EMA — 最佳K-POP</li>
+	        <li>2021 MAMA Awards — 最佳男团舞蹈表演奖</li>
+	        <li>2020 Golden Disc Awards — 本赏</li>
+	        <li>2019 MAMA 最佳新人奖</li>
+	    </ul>
+	</section>
+	
+<footer>
+  Copyright &copy; JYP ENTERTAINMENT Co., Ltd. All rights reserved.
+</footer>
+
+<script>
+function openNav()  { document.getElementById('mysidenav').style.width = '280px'; }
+function closeNav() { document.getElementById('mysidenav').style.width = '0';   }
+</script>
+</body>
+</html>

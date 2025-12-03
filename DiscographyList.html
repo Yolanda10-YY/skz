@@ -1,0 +1,1669 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>Stray Kids: DiscographyList</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+		:root{
+			--accent:#aaaaff;
+			--bg:#fff;
+			--text:#000;
+		}
+		*{box-sizing:border-box;margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,'Noto Sans',sans-serif;}
+		body{
+			background:var(--bg);
+			color:var(--main-color);
+			line-height:1.7;
+			}
+		header{
+			position:fixed;
+			top:0;left:0;
+			width:100%;
+			padding:14px 20px;
+			background:var(--bg);
+			border-bottom:1px solid #e6e6e6;
+			display:flex;
+			align-items:center;
+			z-index:1000
+			}
+		.hamburger{
+			background:none;
+			border:none;
+			cursor:pointer
+			}
+		.hamburger svg{
+			width:24px;
+			height:24px;
+			stroke:var(--text)
+			}
+        section{
+			max-width:1000px;
+			margin:3rem auto;
+			padding:0 1rem;
+			}
+        h2{
+			margin-bottom:1rem;
+			font-size:2rem;
+			border-left:5px solid var(--accent);
+			padding-left:.5rem;
+			margin-top: 5rem;
+			}
+        .cards{
+			display:grid;
+			gap:1.5rem;
+			grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+			}
+        .card{
+			background:#fff;
+			border-radius:8px;
+			overflow:hidden;
+			box-shadow:0 2px 6px rgba(0,0,0,.1);
+			transition:.3s;
+			margin-top: 40px;
+			}
+        .card:hover{
+			transform:translateY(-4px);
+			}
+        .card img{
+			width:100%;
+			height:460px;
+			object-fit:cover;
+			}
+        .card .info{
+			padding:1rem;
+			}
+		.albums li,.awards li,{
+			margin-bottom:.75rem;
+			}
+		
+		.album-grid{
+			display:grid;
+			grid-template-columns:repeat(auto-fill,minmax(180px,1fr));
+			gap:20px;
+			}
+		.album-card{
+			background:#fff;
+			border-radius:8px;
+			overflow:hidden;
+			box-shadow:0 2px 6px rgba(0,0,0,.1);
+			cursor:pointer;
+			transition:transform .3s;
+			width: 100%;
+			height: 100%; 
+			object-fit: cover;
+			}
+		.album-card:hover{
+			transform:translateY(-4px);
+			}
+		.album-card img{
+			width:230px;
+			height:230px;
+			object-fit:cover;
+			
+			}
+		.album-card .info{
+			padding:.8rem;
+			font-size:.9rem;
+			}
+		.album-card .date{
+			color:#666;
+			font-size:.8rem;
+			}
+
+		.album-link{
+		  text-decoration:none;   /* 去掉下划线 */
+		  color:inherit;          /* 继承父级颜色，点击不变色 */
+		}
+		/* 抽屉 */
+		.sidenav{
+			height:100%;
+			width:0;
+			position:fixed;
+			z-index:2000;
+			top:0;
+			left:0;
+			background:#fafafa;
+			overflow-x:hidden;
+			transition:.35s;
+			padding-top:60px;
+			box-shadow:2px 0 8px rgba(0,0,0,.15);
+		}
+		.sidenav .closebtn{
+			position:absolute;
+			top:14px;
+			right:20px;
+			font-size:32px;
+			color:var(--text);
+			cursor:pointer;
+		}
+		.sidenav .logo{
+			text-align:center;
+			margin-bottom:30px;
+			font-size:24px;
+			font-weight:bold
+			}
+		.sidenav ul{
+			list-style:none;
+			}
+		.sidenav ul li{
+			border-bottom:1px solid #e6e6e6
+			}
+		.sidenav ul li:last-child{
+			border-bottom:none
+			}
+		.sidenav ul li a{
+			display:block;
+			padding:18px 26px;
+			color:var(--text);
+			text-decoration:none;
+			font-size:16px;
+			transition:.2s;
+		}
+		.sidenav ul li a:hover{
+			background:var(--accent);
+			color:#fff
+			}
+
+		/* 页脚（仅版权） */
+		footer{
+			margin-top:auto;
+			text-align:center;
+			padding:20px;
+			font-size:12px;
+			color:#666;
+			border-top:1px solid #e6e6e6;
+		}
+		
+		/* 两行布局容器 */
+		.member-grid-2row{
+		  display: grid;
+		  grid-template-columns: repeat(4, 1fr);
+		  grid-template-rows: repeat(2, 1fr);
+		  gap: 20px;
+		  max-width: 1000px;
+		  margin: 0 auto;
+		}
+		
+		/* 手机端单列 */
+		@media(max-width: 768px){
+		  .member-grid-2row{
+		    grid-template-columns: 1fr;
+		    grid-template-rows: auto;
+		  }
+		}
+		
+		
+		.intro {
+		    text-align: left; /* 确保文本左对齐 */
+		    margin-bottom: 1.2rem; /* 添加一些底部外边距 */
+			
+			
+		}
+</style>
+</head>
+
+<body>
+		<header>
+		  <button class="hamburger" onclick="openNav()" aria-label="menu">
+			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+		  </button>
+		</header>
+
+		<nav id="mysidenav" class="sidenav">
+		  <span class="closebtn" onclick="closeNav()">&times;</span>
+		  <div class="logo">Stray Kids</div>
+		  <ul>
+			<li><a href='Home Page.html'>HOME PAGE</a></li>
+			<li><a href="Profile.html">PROFILE</a></li>
+			<li><a href='DiscographyList.html'>DISCOGRAPHY</a></li>
+			<li><a href='Awards.html'>AWARDS</a></li>
+			<li><a href="/Default/Video">VIDEO</a></li>
+			<li><a href="/Default/NoticeList">NOTICE</a></li>
+			<li><a href="/Default/Schedule">SCHEDULE</a></li>
+		  </ul>
+		</nav>
+		
+		<section>
+			<h2>专辑列表</h2>
+			<div class="album-grid">
+				<!-- DO IT -->
+				<a class="album-link" href='DiscographyDetail.html'
+					data-title='DO IT'
+					data-date='2025-11-21'
+					data-cover='img/AlbumCover/DO IT.jpg'
+					data-intro=''
+					data-tracks=
+						'01 DO IT|【Stray Kids 评论】<br>
+						《CEREMONY》蕴含着在忍耐与努力之后收获成功、庆祝在这一过程中克服无数逆境的历程的讯息。其特点在于强烈的Trap EDM曲调节奏、Baile Funk节奏、强劲的Pluck、充满力量感的节拍以及极具感染力的副歌。Stray Kids走过的过去、闪耀的现在以及即将迈向的未来，将如全景画一般在大家面前展开。<br><br>
+						作词：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)<br>
+						作曲：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)、VERSACHOI<br>
+						编曲：VERSACHOI、方灿 (3RACHA);
+						02 CEREMONY (Hip Hip Version - English Version) *Title|【Stray Kids 评论】<br>
+						强烈的 Dubstep Remix的 Hip Hip Version以沉甸甸的基调,进一步提升能量,以更加粗犷、爆发性的声音重新诠释原曲。<br><br>
+						作词：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)<br>
+						作曲：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)、VERSACHOI<br>
+						编曲：VERSACHOI、方灿 (3RACHA)、TYNAN;
+						03 CEREMONY (Hooray Version - English Version) *Title|【Stray Kids 评论】<br>
+						柔和的house节奏和悠闲又上瘾的节奏相结合,助兴的Hooray Version是展现与原曲不同氛围的新鲜魅力的混音版。<br><br>
+						作词：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)<br>
+						作曲：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)、VERSACHOI<br>
+						编曲：VERSACHOI、方灿 (3RACHA)、IMLAY;
+						04 CEREMONY (English Version)|【Stray Kids 评论】<br>
+						是为我们GLOBAL STAY准备的主打歌"CEREMONY"的英文版<br><br>
+						作词：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)<br>
+						作曲：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)、VERSACHOI<br>
+						编曲：VERSACHOI、方灿 (3RACHA);
+						05 CEREMONY (Festival Version - English Version)|【Stray Kids 评论】<br>
+						为了符合庆典，用欢快的声音重新诠释的版本。 欢快的庆典氛围，全球STAY也一起享受吧！<br><br>
+						作词：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)<br>
+						作曲：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)、VERSACHOI<br>
+						编曲：VERSACHOI'>
+					<div class="album-card" >
+						<img src="img/AlbumCover/DO IT.jpg" alt="DO IT">
+						<div class="info">
+							<strong>DO IT</strong>
+							<div class="date">2025-11-21</div>
+						</div>
+					</div>
+				</a>
+			<!-- CEREMONY (Celebrate Remixes) -->
+				<a class="album-link" href='DiscographyDetail.html'
+					data-title='CEREMONY (Celebrate Remixes)'
+					data-date='2025-08-29'
+					data-cover='img/AlbumCover/CEREMONY (Celebrate Remixes).jpg'
+					data-intro=''
+					data-tracks=
+						'01 CEREMONY|【Stray Kids 评论】<br>
+						《CEREMONY》蕴含着在忍耐与努力之后收获成功、庆祝在这一过程中克服无数逆境的历程的讯息。其特点在于强烈的Trap EDM曲调节奏、Baile Funk节奏、强劲的Pluck、充满力量感的节拍以及极具感染力的副歌。Stray Kids走过的过去、闪耀的现在以及即将迈向的未来，将如全景画一般在大家面前展开。<br><br>
+						作词：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)<br>
+						作曲：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)、VERSACHOI<br>
+						编曲：VERSACHOI、方灿 (3RACHA);
+						02 CEREMONY (Hip Hip Version - English Version) *Title|【Stray Kids 评论】<br>
+						强烈的 Dubstep Remix的 Hip Hip Version以沉甸甸的基调,进一步提升能量,以更加粗犷、爆发性的声音重新诠释原曲。<br><br>
+						作词：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)<br>
+						作曲：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)、VERSACHOI<br>
+						编曲：VERSACHOI、方灿 (3RACHA)、TYNAN;
+						03 CEREMONY (Hooray Version - English Version) *Title|【Stray Kids 评论】<br>
+						柔和的house节奏和悠闲又上瘾的节奏相结合,助兴的Hooray Version是展现与原曲不同氛围的新鲜魅力的混音版。<br><br>
+						作词：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)<br>
+						作曲：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)、VERSACHOI<br>
+						编曲：VERSACHOI、方灿 (3RACHA)、IMLAY;
+						04 CEREMONY (English Version)|【Stray Kids 评论】<br>
+						是为我们GLOBAL STAY准备的主打歌"CEREMONY"的英文版<br><br>
+						作词：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)<br>
+						作曲：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)、VERSACHOI<br>
+						编曲：VERSACHOI、方灿 (3RACHA);
+						05 CEREMONY (Festival Version - English Version)|【Stray Kids 评论】<br>
+						为了符合庆典，用欢快的声音重新诠释的版本。 欢快的庆典氛围，全球STAY也一起享受吧！<br><br>
+						作词：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)<br>
+						作曲：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)、VERSACHOI<br>
+						编曲：VERSACHOI'>
+					<div class="album-card" >
+						<img src="img/AlbumCover/CEREMONY (Celebrate Remixes).jpg" alt="CEREMONY (Celebrate Remixes)">
+						<div class="info">
+							<strong>CEREMONY (Celebrate Remixes)</strong>
+							<div class="date">2025-08-29</div>
+						</div>
+					</div>
+				</a>
+				
+			<!-- CEREMONY (Maximum Power Remixes) -->
+				<a class="album-link" href='DiscographyDetail.html'
+					data-title='CEREMONY (Maximum Power Remixes)'
+					data-date='2025-08-25'
+					data-cover='img/AlbumCover/CEREMONY (Maximum Power Remixes).jpg'
+					data-intro=''
+					data-tracks=
+						'01 CEREMONY|【Stray Kids 评论】<br>
+						《CEREMONY》蕴含着在忍耐与努力之后收获成功、庆祝在这一过程中克服无数逆境的历程的讯息。其特点在于强烈的Trap EDM曲调节奏、Baile Funk节奏、强劲的Pluck、充满力量感的节拍以及极具感染力的副歌。Stray Kids走过的过去、闪耀的现在以及即将迈向的未来，将如全景画一般在大家面前展开。<br><br>
+						作词：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)<br>
+						作曲：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)、VERSACHOI<br>
+						编曲：VERSACHOI、方灿 (3RACHA);
+						02 CEREMONY (KARMA Version) *Title|【Stray Kids 评论】<br>
+						《CEREMONY》的KARMA Version是一首节奏感十足的贝斯风格歌曲,融合了强烈的贝斯,能量逐渐高涨,给人留下深刻印象。 在既沉重又欢快的Drop中 可以感受到Stray Kids独有的色彩。<br><br>
+						作词：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)<br>
+						作曲：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)、VERSACHOI<br>
+						编曲：VERSACHOI、方灿 (3RACHA)、Habstrakt;
+						03 CEREMONY (Sped Up Version)|<br>
+						作词：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)<br>
+						作曲：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)、VERSACHOI<br>
+						编曲：VERSACHOI、方灿 (3RACHA);
+						04 CEREMONY (Slowed Down Version)|<br>
+						作词：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)<br>
+						作曲：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)、VERSACHOI<br>
+						编曲：VERSACHOI、方灿 (3RACHA);
+						05 CEREMONY (Instrumental)|<br>
+						作曲：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)、VERSACHOI<br>
+						编曲：VERSACHOI、方灿 (3RACHA)'>
+					<div class="album-card" >
+						<img src="img/AlbumCover/CEREMONY (Maximum Power Remixes).jpg" alt="CEREMONY (Maximum Power Remixes)">
+						<div class="info">
+							<strong>CEREMONY (Maximum Power Remixes)</strong>
+							<div class="date">2025-08-25</div>
+						</div>
+					</div>
+				</a>
+				
+		    <!-- KARMA -->
+				<a class="album-link" href='DiscographyDetail.html'
+					data-title='KARMA'
+					data-date='2025-08-22'
+					data-cover='img/AlbumCover/KARMA.jpg'
+					data-intro='Stray Kids'
+					data-tracks=
+						'01 BLEEP|【Stray Kids 评论】<br>
+						这是一首在电影感歌曲基础上加入Boom Bap节奏的嘻哈歌曲，展现了 Stray Kids 屏蔽负面噪音、向着成长迈进的自信心。通过恢弘的节拍以及成员间相互呼应的超强感染力副歌，传递出 “无视指责与阻挠，攻克挑战” 的讯息。<br><br>
+						作词：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)<br>
+						作曲：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)、VERSACHOI<br>
+						编曲：VERSACHOI、方灿 (3RACHA);
+						02 CEREMONY *Title|主打歌《CEREMONY》蕴含着在忍耐与努力之后收获成功、庆祝在这一过程中克服无数逆境的历程的讯息。其特点在于强烈的Trap EDM曲调节奏、Baile Funk节奏、强劲的Pluck、充满力量感的节拍以及极具感染力的副歌。Stray Kids走过的过去、闪耀的现在以及即将迈向的未来，将如全景画一般在大家面前展开。<br><br>
+						作词：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)<br>
+						作曲：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)、VERSACHOI<br>
+						编曲：VERSACHOI、方灿 (3RACHA);
+						03 CREED|正如歌名所示，这是一首关于强烈信念的曲目。极具魅力的旋律和如同咒语般反复的副歌令人印象深刻。在深沉的陷阱嘻哈节拍之上，既蕴含着 “我会按照自己的信念说话，按照所说的去行动” 的决心，也承载着 “毫不动摇地走我们自己的路” 的意志。<br><br>
+						作词：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)<br>
+						作曲：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)、Millionboy<br>
+						编曲：Millionboy、方灿 (3RACHA);
+						04 MESS|这是一首Emo hip-hop曲目，在嘻哈节拍上融入粗粝的吉他声，通过直白的歌词表达了分手后残留的留恋与矛盾。我们希望围绕 “混乱” 这一主题，将纠缠不清的处境与复杂的心情展现出来。<br><br>
+						作词：韩知城 (3RACHA)、方灿 (3RACHA)<br>
+						作曲：韩知城 (3RACHA)、方灿 (3RACHA)、Millionboy<br>
+						编曲：Millionboy、方灿 (3RACHA);
+						05 In My head|这是一首 Pop rock 风格的歌曲，融合了明快轻松的吉他声轨和朗朗上口的旋律。歌词描绘了在反复的日常生活中偶尔出现的烦恼时刻。如果有正在为某些事情烦恼的 STAY，希望哼唱这首歌的瞬间，能让你们的心情暂时变得轻松一些。<br><br>
+						作词：徐彰彬 (3RACHA)、方灿 (3RACHA)<br>
+						作曲：徐彰彬 (3RACHA)、方灿 (3RACHA)、JUN2<br>
+						编曲：JUN2、方灿 (3RACHA);
+						06 Half Time|由贝斯主导的《반전 (Half Time)》是一首宣告比赛尚未结束、坚定面向即将展开的下半场的决心与自信的歌曲。围绕半场休息这一转折点，刻画了即便跌倒也会重新站起、创造逆转的意志。在富有战术性的节奏、充满动感的节拍之上，铺展开关于执念的叙事，成员们的合唱如同和声般回荡开来，这是一首让人能联想到共同创造逆转瞬间的歌曲。<br><br>
+						作词：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)<br>
+						作曲：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)、VERSACHOI<br>
+						编曲：VERSACHOI、方灿 (3RACHA);
+						07 Phoenix|这是一首蕴含着如浴火重生、振翅高飞的凤凰般克服困难、向更高处飞跃的讯息的EDM歌曲。震撼人心的澎湃音效与恢弘的合唱中，充满了热情与希望的能量。<br><br>
+						作词：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)<br>
+						作曲：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)、Ronnie Icon、DallasK<br>
+						编曲：DallasK、方灿 (3RACHA);
+						08 Ghost|这首歌的特点是由震撼心脏的贝斯、尖锐的合成器、富有情感的管风琴音效，以及受 big beat影响的节奏共同营造出的欢快声响。与之形成对比的是，歌词描绘了内心的痛苦、渴望变强的挣扎以及混乱中的双重性，这种反差感让歌曲极具魅力。如同幽灵般飘忽的情绪与空虚感中，那份不愿失去希望的心境通过歌声在旋律中完美融合，将留下深刻而悠长的余韵。<br><br>
+						作词：方灿 (3RACHA)、徐彰彬 (3RACHA)、VERSACHOI<br>
+						作曲：方灿 (3RACHA)、徐彰彬 (3RACHA)、VERSACHOI<br>
+						编曲：VERSACHOI、方灿 (3RACHA);
+						09 0801|这是一首合 synthwave 流行风格的歌曲，歌词中满含温暖的慰藉与应援，柔和的旋律十分突出。大家知道吗，STAY 身边永远都有 Stray Kids 在哦？希望这份明确的约定能好好传递给大家。<br><br>
+						作词：方灿 (3RACHA)<br>
+						作曲：方灿 (3RACHA)、VERSACHOI<br>
+						编曲：VERSACHOI;
+						10 CEREMONY (Festival Ver.)|这是主打歌《CEREMONY》的混音版本，为了契合节日氛围，将其重新诠释为欢快的旋律。<br><br>
+						作词：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)<br>
+						作曲：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)、VERSACHOI<br>
+						编曲：VERSACHOI;
+						11 CEREMONY(English Ver.)|这是为我们全球的 STAY 准备的主打歌《CEREMONY》的英文版！<br><br>
+						作词：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)<br>
+						作曲：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)、VERSACHOI<br>
+						编曲：VERSACHOI、方灿 (3RACHA)'>
+					<div class="album-card">
+						<img src='img/AlbumCover/KARMA.jpg' alt="KARMA">
+						<div class="info">
+							<strong>KARMA</strong>
+							<div class="date">2025-08-22</div>
+						</div>
+					</div>
+				</a>
+			
+			<!-- Hollow -->	
+				<a class="album-link" href='DiscographyDetail.html'
+					data-title='Hollow'
+					data-date='2025-06-18'
+					data-cover='img/AlbumCover/Hollow.jpg'
+					data-intro='Stray Kids, 6月18日发行日本迷你第三张专辑《Hollow》！'
+					data-tracks=
+						'01 Hollow *Title|这首歌巧妙融合了象征空荡的英文词"Hollow"与蕴含"孑然一身、孤独"之意的韩语"홀로"的双重意境，通过"哀婉"的歌词与"感性"的旋律，刻画了骤然袭来的虚无与孤寂。<br><br>
+						作词：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)、KM-MARKIT<br>
+						作曲：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)、VERSACHOI<br>
+						编曲：VERSACHOI;
+						02 Parade|这首歌被选为日本惊悚电影《寻找身体 THE LAST NIGHT》的主题曲，整首歌延续了Stray Kids标志性的热血嗓音。歌词里充满了少年们勇敢面对恐惧的宣言，完美配合了电影里那种生死逃亡的紧张感和绝地反击的燃爆节奏，给青春惊悚片带来了K-POP独有的热烈气息。<br><br>
+						作词：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)、KM-MARKIT<br>
+						作曲：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)、Millionboy<br>
+						编曲：Millionboy、方灿 (3RACHA);
+						03 Never Alone|歌词里唱着“你不是一个人”的安慰感，还有“我们在一起就能搞定一切”的信心，配上特别有活力的节奏，整首歌听着就让人特别带劲儿。<br><br>
+						作词：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)、Yohei<br>
+						作曲：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)、VERSACHOI<br>
+						编曲：VERSACHOI、方灿 (3RACHA);
+						04 just a little|虽然是日语曲，但是副歌部分反复出现了韩国语“等一下”，给人留下了深刻的印象，是一首细腻地表现了离别前殷切感情的歌曲。<br><br>
+						作词：韩知城 (3RACHA)、KM-MARKIT<br>
+						作曲：韩知城 (3RACHA)、方灿 (3RACHA)<br>
+						编曲：方灿 (3RACHA)、Millionboy;
+						05 宿命|歌唱了仿佛已定的命运般的相遇。这首歌描绘了星星和月亮一样的命运般的爱情，包含着将缘分和爱情当作命运接受的纯粹的感情。<br><br>
+						作词：徐彰彬 (3RACHA)、RESTART、KM-MARKIT<br>
+						作曲：徐彰彬 (3RACHA)、Millionboy、RESTART、Nickko Young<br>
+						编曲：Millionboy、Nickko Young'>
+					<div class="album-card" >
+						<img src="img/AlbumCover/Hollow.jpg" alt="Hollow">
+						<div class="info">
+							<strong>Hollow</strong>
+							<div class="date">2025-06-18</div>
+						</div>
+					</div>
+				</a>
+			
+			<!-- Mixtape : dominATE -->
+				<a class="album-link" href='DiscographyDetail.html'
+				    data-title='Mixtape: dominATE'
+				    data-date='2025-03-21'
+				    data-cover='img/AlbumCover/dominATE.jpg'
+				    data-intro='Stray Kids 3月21日发行全新单曲专辑《Mixtape : dominATE》！为庆祝出道7周年，献上惊喜礼物！<br>
+					 - “Mixtape Project”的第五张单曲专辑！收录了《GIANT (Korean Ver.)》以及将在世界巡演舞台上呈现的Unit歌曲！<br>
+					 - 全员参与歌曲制作！涵盖多样化曲风，展现独特音乐个性，各Unit协同效应尽显！<br><br>
+					 《Mixtape : dominATE》是 Stray Kids 自2019年以来持续推进的“Mixtape Project”的一部分，继2019年12月的《Mixtape : Gone Days》、2020年3月的《Mixtape : On Track》、2021年6月的《Mixtape : OH》以及2022年8月的《Mixtape : Time Out》后推出的新作品。作为每一张专辑都有组合内制作团队 3RACHA 在内的全体成员参与歌曲制作的 “自主制作组合”，Stray Kids 通过亲自创作的新歌，展现出了独属于 “Stray Kids” 这一风格的丰富多彩且无限的可能性。'
+				    data-tracks='
+						01 GIANT (Korean Ver.) *Title|【Stray Kids 评论】<br>
+						很高兴能为大家带来日本正规二辑主打曲《GIANT》的韩语版本。这是一首融合了Boom Bap和Dubstep的Mix Pop风格歌曲，同时也是以强烈的贝斯和合成器音效为基调的嘻哈歌曲。希望大家能够感受到 Stray Kids 独有的恢弘且充满力量感的魅力。<br><br>
+						作词：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)  <br>
+						作曲：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)、RESTART、채강해  <br>
+						编曲：RESTART、채강해、方灿 (3RACHA)  <br>
+						所有乐器演奏：RESTART、채강해、方灿 (3RACHA)  <br>
+						电脑编程：RESTART、채강해、方灿 (3RACHA)  <br>
+						和声：Stray Kids  <br>
+						人声指导：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)  <br>
+						录音：최혜진、구혜진 @ JYPE Studios，方灿 (3RACHA) @ Channie’s "Room"  <br>
+						数字编辑：이경원、方灿 (3RACHA)  <br>;
+						02 Burnin’ Tires (徐彰彬 & 梁精寅)|【Stray Kids 评论】<br>
+						这是一首充满活力的流行朋克与摇滚元素融合的嘻哈歌曲，结合了富有能量感的电吉他与碎拍节奏。我们试图通过这首歌展现如同无所顾忌地奔跑般的速度感，以及对自由的渴望。希望大家能感受到Stray Kids如同在无尽道路上燃烧的轮胎般，突破现实的界限，自由奔向属于自己道路的热血与激情！<br><br>
+						作词： 徐彰彬 (3RACHA)、梁精寅<br>
+						作曲： 徐彰彬 (3RACHA)、梁精寅、RESTART、채강해<br>
+						编曲： RESTART、채강해<br>
+						和声： 徐彰彬 (3RACHA)、梁精寅<br>
+						录音： RESTART、徐彰彬 (3RACHA)<br>
+						人声指导： 徐彰彬 (3RACHA)<br>;
+						03 Truman (韩知城 & 李龙馥)|【Stray Kids 评论】<br>
+						这是一首充满强烈能量的Rage Hip-Hop歌曲，以充满质感的Intro开场，并搭配截然不同的狂野节奏与激烈说唱，形成鲜明对比。歌曲传达了勇往直前迈向成功的坚定信念，并展现出作为一个团队不断挑战与突破的精神。<br><br>
+						作词：韩知城 (3RACHA)、李龙馥<br>
+						作曲：Vendors (Helixx)、PEACH.L、韩知城 (3RACHA)、李龙馥<br>
+						和声：韩知城 (3RACHA)、李龙馥<br>
+						录音：韩知城 (3RACHA)、서은일 @ JYPE Studios<br>
+						04 ESCAPE (方灿 & 黄铉辰)|【Stray Kids 评论】<br>
+						这首歌曲融合了梦幻般的电子吉他与魅惑感十足的雷鬼律动，是既强烈又克制的另类R&B作品。歌曲传递了“抛开堕落的世界与绝望，一起奔向爱与自由”的信息。希望这首歌能成为喜爱Bang Chan & Hyunjin《Red Lights》的粉丝们的又一份珍贵礼物！<br><br>
+						作词：方灿 (3RACHA)、黄铉辰<br>
+						作曲：方灿 (3RACHA)、黄铉辰、VERSACHOI<br>
+						编曲：方灿 (3RACHA)、VERSACHOI<br>
+						乐器演奏：方灿 (3RACHA)、VERSACHOI<br>
+						电脑编程：方灿 (3RACHA)、VERSACHOI<br>
+						和声：方灿 (3RACHA)、黄铉辰<br>
+						录音：方灿 (3RACHA) @ Channie’s “Room”<br>;
+						05 CINEMA (金昇玟 & 李旻浩)|【Stray Kids 评论】<br>
+						这是一首以磅礴的鼓声揭开序幕，逐渐高涨的情绪铺陈触动心弦的Band Pop歌曲。歌曲表达了“直到幕布落下的那一刻为止，都将全力歌唱”的信念，以及因彼此的存在而让一部电影得以完整的过程，并以抒情的旋律与歌词呈现出这一情感。歌曲讲述了每个竭尽全力的瞬间、每一帧人生的画面，交织出如同电影般温暖的故事。<br><br>
+						作词：金昇玟、李旻浩<br>
+						作曲：金昇玟、이기환、CONA<br>
+						编曲：이기환、CONA<br>'>
+				    <div class="album-card">
+						<img src='img/AlbumCover/dominATE.jpg' alt="Mixtape : dominATE">
+						<div class="info">
+							<strong>Mixtape : dominATE</strong>
+							<div class="date">2025-03-21</div>
+						</div>
+					</div>
+				</a>
+			
+			<!-- Walkin On Water (Remixes) -->
+				<a class="album-link" href='DiscographyDetail.html'
+				    data-title='Walkin On Water (Remixes)'
+				    data-date='2024-12-16'
+				    data-cover='img/AlbumCover/WalkinOnWaterRemixes.jpg'
+				    data-intro='SKZHOP HIPTAPE是将Stray Kids的缩写“SKZ”和HIP-HOP合成后命名的，它就像一种尚未被正式定义的新流派一样，是收录了属于“Stray Kids自己的新流派（new genre）”歌曲的专辑。SKZHOP HIPTAPE的首个作品名称是《合 (HOP)》，取自Stray Kids八位成员相聚形成的默契之意，以及嘻哈这一音乐流派英文名中的“HOP”，蕴含着双重含义。'
+				    data-tracks='
+						01 Walkin On Water|【Stray Kids 评论】<br>
+						将 Stray Kids对舞台的自信比喻成在水面上行走并在湍急的水流中嬉戏玩耍的样子。编曲运用了Old School元素，能让人联想到水花飞溅模样的巧妙音效是歌曲的亮点所在，这是一首能让人感受到Stray Kids所独有的独特能量的、Stray Kids牌嘻哈歌曲。<br><br>
+						作词：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)<br>
+						作曲：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)、RESTART、채강해<br>
+						编曲：RESTART、채강해、方灿 (3RACHA)<br>
+						所有乐器：RESTART、채강해、方灿 (3RACHA)<br>
+						电脑编程：RESTART、채강해、方灿 (3RACHA)<br>
+						和声：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)、李龙馥<br>
+						数字编辑：이경원、方灿 (3RACHA)<br>
+						录音：이창훈、구혜진 @ JYPE Studios，方灿 (3RACHA) @ 方灿的“房间”(Channie’s “Room”)；
+						02 Walkin On Water (Sleigh Ver.)|【Stray Kids 评论】<br>
+						这是一首采样了圣诞歌曲《Jingle Bell》的混音歌曲。在不断变换的多种氛围的节奏中响起的手铃、铜管乐器的声音中，能够感受到节日氛围。通过与原曲不同感觉的和弦编曲，展现出了Stray Kids独有的独特嘻哈风格的圣诞歌曲混音版本。<br><br>
+						作词：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)<br>
+						作曲：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)、RESTART、채강해<br>
+						编曲：RESTART、채강해、方灿 (3RACHA)<br>
+						混音：RESTART、채강해<br>
+						和声：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)、李龙馥<br>
+						数字编辑：이경원、方灿 (3RACHA)<br>
+						录音：이창훈、구혜진 @ JYPE Studios，方灿 (3RACHA) @ 方灿的“房间”(Channie’s “Room”);
+						03 Walkin On Water (Sway Ver.)|【Stray Kids 评论】<br>
+						这是改编为New Jack Swing风格的歌曲，拥有令人不禁随之起舞的富有韵律的旋律，是一首颇具魅力的混音歌曲。突出的贝斯声与轻快的鼓点节奏相融合，能让人进一步感受到Stray Kids极具律动感的说唱和演唱。<br><br>
+						作词：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)<br>
+						作曲：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)、RESTART、채강해<br>
+						编曲：RESTART、채강해、方灿 (3RACHA)<br>
+						混音：RESTART、채강해<br>
+						和声：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)、李龙馥<br>
+						数字编辑：이경원、方灿 (3RACHA)<br>
+						录音：이창훈、구혜진 @ JYPE Studios，方灿 (3RACHA) @ 方灿的“房间”(Channie’s “Room”);
+						04 Walkin On Water (Sped Up Ver.)|<br>
+						作词：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)<br>
+						作曲：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)、RESTART、채강해<br>
+						编曲：RESTART、채강해、方灿 (3RACHA)<br>
+						所有乐器：RESTART、채강해、方灿 (3RACHA)<br>
+						电脑编程：RESTART、채강해、方灿 (3RACHA)<br>
+						和声：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)、李龙馥<br>
+						数字编辑：이경원、方灿 (3RACHA)<br>
+						录音：이창훈、구혜진 @ JYPE Studios，方灿 (3RACHA) @ 方灿的“房间”(Channie’s “Room”);
+						05 Walkin On Water (Instrumental)|<br>
+						作曲：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)、RESTART、채강해<br>
+						编曲：RESTART、채강해、方灿 (3RACHA)<br>
+						所有乐器：RESTART、채강해、方灿 (3RACHA)<br>
+						电脑编程：RESTART、채강해、方灿 (3RACHA)<br>
+						数字编辑：이경원、方灿 (3RACHA)<br>
+						录音：이창훈、구혜진 @ JYPE Studios，方灿 (3RACHA) @ 方灿的“房间”(Channie’s “Room”)'>
+				    <div class="album-card">
+						<img src='img/AlbumCover/WalkinOnWaterRemixes.jpg' alt="Walkin On Water (Remixes)">
+						<div class="info">
+							<strong>Walkin On Water (Remixes)</strong>
+							<div class="date">2024-12-16</div>
+						</div>
+					</div>
+				</a>
+			
+			<!-- HOP -->
+				<a class="album-link" href='DiscographyDetail.html'
+				    data-title='HOP'
+				    data-date='2024-12-13'
+				    data-cover='img/AlbumCover/HOP.jpg'
+				    data-intro='Stray Kids，将通过 SKZHOP HIPTAPE 开拓新风格！首张作品名为《合 (HOP)》<br>
+					 - 新专辑《合 (HOP)》，Stray Kids 八位成员凝聚而成的 “合”， 以及 HIP-“HOP”， 具有双重含义'
+				    data-tracks=
+						'01 Walkin On Water|【Stray Kids 评论】<br>
+						将 Stray Kids对舞台的自信比喻成在水面上行走并在湍急的水流中嬉戏玩耍的样子。编曲运用了Old School元素，能让人联想到水花飞溅模样的巧妙音效是歌曲的亮点所在，这是一首能让人感受到Stray Kids所独有的独特能量的、Stray Kids牌嘻哈歌曲。<br><br>
+						作词：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)<br>
+						作曲：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)、RESTART、채강해<br>
+						编曲：RESTART、채강해、方灿 (3RACHA)<br>
+						所有乐器：RESTART、채강해、方灿 (3RACHA)<br>
+						电脑编程：RESTART、채강해、方灿 (3RACHA)<br>
+						和声：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)、李龙馥<br>
+						数字编辑：이경원、方灿 (3RACHA)<br>
+						录音：이창훈、구혜진 @ JYPE Studios，方灿 (3RACHA) @ 方灿的“房间”(Channie’s “Room”)；
+						02 Bounce Back|【Stray Kids 评论】<br>
+						这是一首将Old School与粗狂的摇滚乐相结合的说唱歌曲，能让人感受到强烈且狂野的能量。拥有令人上瘾的口哨旋律和警笛音效作为亮点，并且传达了“无论遇到何种困难，只要Stray Kids团结在一起，就能继续勇往直前”这样的信息。<br><br>
+						作词：韩知城 (3RACHA)、方灿 (3RACHA)<br>
+						作曲：韩知城 (3RACHA)、方灿 (3RACHA)、VERSACHOI<br>
+						编曲：方灿 (3RACHA)、VERSACHOI<br>
+						所有乐器：方灿 (3RACHA)、VERSACHOI<br>
+						电脑编程：方灿 (3RACHA)、VERSACHOI<br>
+						和声：方灿 (3RACHA)、韩知城 (3RACHA)<br>
+						数字编辑：riskypizza、方灿 (3RACHA)<br>
+						录音：곽보은 @ JYPE Studios，方灿 (3RACHA) @ 方灿的“房间”(Channie’s “Room”);
+						03 U (Feat. TABLO)|【Stray Kids 评论】<br>
+						这是一首在以强节奏感为特点的DnB风格节拍基础上，加入了旋律优美的主歌旋律的歌曲，能够让人感受到一种既抒情又令人心潮澎湃的氛围。伴随着“努力想要忘却，徘徊许久，最终还是回到你身边” 这般朦胧的歌词，再加上Epik High的TABLO前辈的合作助力，更加深刻地表达出了深沉的情感。<br><br>
+						作词：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)、TABLO、JBACH<br>
+						作曲：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)、JBACH、Marc Sibley、Nathan Cunningham<br>
+						编曲：Space Primates、方灿 (3RACHA)<br>
+						和声：方灿 (3RACHA)、JBACH;
+						04 Walkin On Water (HIP Ver.)|【Stray Kids 评论】<br>
+						这是一首Trap & Bass风格的混音歌曲，它将原曲中那种“HIP”的魅力最大化，打造成了一个更加令人酷爽、欢快的版本。<br><br>
+						作词：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)<br>
+						作曲：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)、RESTART、채강해<br>
+						编曲：RESTART、채강해、方灿 (3RACHA)<br>
+						混音：2Spade<br>
+						和声：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)、李龙馥<br>
+						数字编辑：이경원、方灿 (3RACHA)<br>
+						录音：이창훈、구혜진 @ JYPE Studios，方灿 (3RACHA) @ 方灿的“房间”(Channie’s “Room”);
+						05 Railway (Bang Chan)|【Stray Kids 评论】<br>
+						“A song based on trains”，黑暗且慵懒氛围与激烈的吉他音效相结合的合成流行风格的歌曲。将对彼此的强烈情感比喻为疾驰而过、风驰电掣般的火车。<br><br>
+						作词：方灿 (3RACHA)<br>
+						作曲：方灿 (3RACHA)、VERSACHOI<br>
+						编曲：VERSACHOI、方灿 (3RACHA)<br>
+						电脑编程：VERSACHOI、方灿 (3RACHA)<br>
+						和声：方灿 (3RACHA)<br>
+						数字编辑：方灿 (3RACHA)、VERSACHOI<br>
+						录音：方灿 (3RACHA) @ 方灿的“房间”(Channie’s “Room”);
+						06 Unfair (Felix)|【Stray Kids 评论】<br>
+						这是一首有着复古氛围的R&B HIPHOP歌曲。以童话《美女与野兽》为主题，将野兽所感受到的人生的不公平，以及它遇见贝尔后逐渐找寻到真实自我的故事，用戏剧化的格调展现了出来。<br><br>
+						作词：李龙馥<br>
+						作曲：李龙馥、VERSACHOI<br>
+						编曲：VERSACHOI;
+						07 HALLUCINATION (I.N)|【Stray Kids 评论】<br>
+						这是一首嘻哈舞曲，有着梦幻且迷人的氛围，从中可以感受到组合忙内的反转魅力。歌曲包含了“就像刹那间的幻想一般，无法忘记擦肩而过的那个人，希望对方能再次出现”这类内容。<br><br>
+						作词：徐彰彬 (3RACHA)、梁精寅、RESTART<br>
+						作曲：徐彰彬 (3RACHA)、梁精寅、RESTART、채강해<br>
+						编曲：RESTART、채강해<br>
+						和声：徐彰彬 (3RACHA)、梁精寅;
+						08 Youth (Lee Know)|【Stray Kids 评论】<br>
+						这是一首有着轻快且富有韵律氛围的放克风格的合成器流行歌曲。以Lee Know特有的方式表达了“让我们享受当下这一刻的人生”这一欢快、愉悦的信息。<br><br>
+						作词：danke、방혜현、李旻浩<br>
+						作曲：chAN’s (TAKE A CHANCE)、Backbear (TAKE A CHANCE)、CELOTRON (Decade+)<br>
+						编曲：chAN’s (TAKE A CHANCE)、Backbear (TAKE A CHANCE);
+						09 So Good (Hyunjin)|【Stray Kids 评论】<br>
+						这是一首呈现出精致且简约风格的、有着Chill感觉的嘻哈舞曲。歌曲包含了抛下不安与不幸，去享受激情澎湃人生的内容。<br><br>
+						作词：黄铉辰<br>
+						作曲：黄铉辰、Joha<br>
+						编曲：Joha<br>
+						和声：黄铉辰<br>
+						录音：黄铉辰;
+						10 ULTRA (Changbin)|【Stray Kids 评论】<br>
+						这是一首嘻哈EDM风格的歌曲，强烈的节奏充满魅力。用独特且充满力量的说唱，展现出通过不停奔跑才打造出如今充满自信且“Ultra的”模样的歌曲。<br><br>
+						作词：徐彰彬 (3RACHA)<br>
+						作曲：徐彰彬 (3RACHA)、RESTART、채강해<br>
+						编曲：RESTART、채강해<br>
+						和声：徐彰彬 (3RACHA);
+						11 Hold my hand (HAN)|【Stray Kids 评论】<br>
+						这是一首以摇滚风格为基础的说唱歌曲，能听到既抒情又充满能量的说唱以及清爽的演唱。即便身处艰难的处境，也会让对方一直幸福下去，直到对方不再流泪，所以握住我的手吧，歌曲传达着这样的信息。<br><br>
+						作词：韩知城 (3RACHA)<br>
+						作曲：韩知城 (3RACHA)、Vendors (Helixx)<br>
+						编曲：Vendors (Helixx)<br>
+						和声：韩知城 (3RACHA);
+						12 As we are (Seungmin)|【Stray Kids 评论】<br>
+						经历了许多事。即便跌倒、落泪的瞬间，也要向下扎根、向上生长，让我们一起怀着更加温暖的心，慢慢地向前奔跑吧，这是一首传达着这样信息的歌曲。专注于在中速的乐队演奏基础上，用饱含真情的歌声来引领整首歌曲。希望它能够给大家带来慰藉。<br><br>
+						作词：金昇玟、홍지상<br>
+						作曲：金昇玟、홍지상<br>
+						编曲：홍지상<br>
+						和声：金昇玟'>
+				    <div class="album-card">
+						<img src='img/AlbumCover/HOP.jpg' alt="HOP">
+						<div class="info">
+							<strong>HOP</strong>
+							<div class="date">2024-12-13</div>
+						</div>
+					</div>
+				</a>
+			
+			<!-- Giant -->
+				<a class="album-link" href='DiscographyDetail.html'
+				    data-title='Giant'
+				    data-date='2024-11-13'
+				    data-cover='img/AlbumCover/Giant.jpg'
+				    data-intro='Stray Kids 11 月 13 日携日本第二张正规专辑《GIANT》重磅回归！'
+				    data-tracks='
+						01 Giant|《GIANT》是一首融合 Boom Bap 与 Dubstep 的混合流行嘻哈单曲，以炸裂低音与锋利合成器为核心。<br><br>
+						作词：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)、Yohei<br>
+						作曲：方灿 (3RACHA)、徐彰彬 (3RACHA)、RESTART、채강해、韩知城 (3RACHA)<br>
+						编曲：方灿 (3RACHA)、RESTART、채강해;
+						02 Chk Chk Boom -Japanese ver.-|2024 年 7 月首发即闯进美国 Billboard「Hot 100」第 49 位的《Chk Chk Boom》，迎来日语版上线。<br><br>
+						作词：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)、D&H (PURPLE NIGHT)、SHUNSUKE TAKAI<br>
+						作曲：方灿 (3RACHA)、徐彰彬 (3RACHA)、DallasK、韩知城 (3RACHA)、Ronnie Icon、BB ELLIOT<br>
+						编曲：方灿 (3RACHA)、DallasK、RESTART、채강해;
+						03 NIGHT|《NIGHT》是TV动画《神之塔：工房战》片头曲。继《神之塔》第一季后，Stray Kids再度参与动画的音乐制作。歌曲由组合内制作团队3RACHA的BANG CHAN、CHANGBIN、HAN参与创作，围绕角色的内心状态，与动画主题相辅相成，希望观众能透过音乐更深入体会动画的魅力。<br><br>
+						作词：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)、D&H (PURPLE NIGHT)<br>
+						作曲：方灿 (3RACHA)、徐彰彬 (3RACHA)、VERSACHOI、韩知城 (3RACHA)<br>
+						编曲：VERSACHOI;
+						04 Falling Up|《Falling Up》是TV动画《神之塔：工房战》片尾曲。<br><br>
+						作词：方灿 (3RACHA)、徐彰彬 (3RACHA)、KM-MARKIT
+						作曲：方灿 (3RACHA)、徐彰彬 (3RACHA)、RESTART、채강해
+						编曲：方灿 (3RACHA)、RESTART、채강해;
+						05 WHY?|Stray Kids首次演唱的日剧主题曲《WHY?》作为赤楚卫二和锦戸亮共演日剧《Re:Revenge -在欲望的尽头-》主题曲，以洗脑的旋律和节奏感架构出与戏剧作品相符的反乌托邦意境。<br><br>
+						作词：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)、D&H (PURPLE NIGHT)、Yohei<br>
+						作曲：方灿 (3RACHA)、徐彰彬 (3RACHA)、홍지상、韩知城 (3RACHA)<br>
+						编曲：홍지상;
+						06 Saiyan|另类摇滚碰撞嘻哈节拍，打破风格边界，带来爆裂而精致的震撼声场。<br><br>
+						作词：韩知城 (3RACHA)、方灿 (3RACHA)、KM-MARKIT<br>
+						作曲：韩知城 (3RACHA)、方灿 (3RACHA)<br>
+						编曲：方灿 (3RACHA)、VERSACHOI;
+						07 愛をくれたのに、なぜ (love is painful)|摇滚 × 嘻哈破壁融合，注入 Stray Kids 独特色彩。<br><br>
+						作词：徐彰彬 (3RACHA)、方灿 (3RACHA)、KM-MARKIT<br>
+						作曲：徐彰彬 (3RACHA)、方灿 (3RACHA)、BUSH<br>
+						编曲：徐彰彬 (3RACHA)、BUSH;
+						08 Christmas Love|这首歌既有年末的温暖氛围,又有轻快的节奏和清新的歌声,在传统的圣诞颂感觉上添加了现代编曲和生动感,以充满活力的方式表达年末的兴奋之情。<br><br>
+						作词：方灿 (3RACHA)、Yohei<br>
+						作曲：方灿 (3RACHA)、VERSACHOI<br>
+						编曲：VERSACHOI;
+						09 NIGHT -English ver.-|《NIGHT -English ver.-》是TV动画《神之塔：工房战》英语版片头曲。<br>
+						作词：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)、Sophia Pae<br>
+						作曲：方灿 (3RACHA)、徐彰彬 (3RACHA)、VERSACHOI、韩知城 (3RACHA)<br>
+						编曲：VERSACHOI;
+						10 Falling Up -English ver.-|《Falling Up -English ver.-》是TV动画《神之塔：工房战》英语版片尾曲。<br><br>
+						作词：方灿 (3RACHA)、徐彰彬 (3RACHA)、Sophia Pae<br>
+						作曲：方灿 (3RACHA)、徐彰彬 (3RACHA)、RESTART、채강해<br>
+						编曲：方灿 (3RACHA)、RESTART、채강해'>
+				    <div class="album-card">
+						<img src='img/AlbumCover/Giant.jpg' alt="Giant">
+						<div class="info">
+							<strong>Giant</strong>
+							<div class="date">2024-11-13</div>
+						</div>
+					</div>
+				</a>
+			
+			<!-- SLASH -->
+				<a class="album-link" href='DiscographyDetail.html'
+				    data-title='SLASH'
+				    data-date='2024-07-23'
+				    data-cover='img/AlbumCover/Slash.jpg'
+				    data-intro='Stray Kids参与电影《死侍与金刚狼》OST！7月23日发行单曲《SLASH》！
+					- 以电影《死侍》为主题制作的新单曲《SLASH》，成为电影《死侍与金刚狼》的OST！'
+				    data-tracks='01 SLASH *Title|【Stray Kids 评论】<br>
+						以电影《死侍》为主题制作的歌曲。强烈的架子鼓Beat和节制的合成器声音融合的EDM Trap风格歌曲，在雄壮又充满紧张感的氛围上添加了中毒性的钢琴和刀具的FX Sound。希望听众们能感受到仿佛在看电影中华丽的战斗场面一样的刺激感。<br><br>
+						作词：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)<br>
+						作曲：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)、VERSACHOI<br>
+						编曲：方灿 (3RACHA)、VERSACHOI<br>
+						所有乐器：方灿 (3RACHA)、VERSACHOI<br>
+						电脑编程：方灿 (3RACHA)、VERSACHOI<br>
+						和声：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)<br>
+						数字编辑：이경원、方灿 (3RACHA)<br>
+						录音：임찬미 @ JYPE Studios，方灿 (3RACHA) @ Channie’s “Room”'>
+				    <div class="album-card">
+						<img src='img/AlbumCover/Slash.jpg' alt="SLASH">
+						<div class="info">
+							<strong>SLASH</strong>
+							<div class="date">2024-07-23</div>
+						</div>
+					</div>
+				</a>
+			
+			<!-- Chk Chk Boom (Remixes) -->
+				<a class="album-link" href='DiscographyDetail.html'
+				    data-title='Chk Chk Boom (Remixes)'
+				    data-date='2024-07-22'
+				    data-cover='img/AlbumCover/ChkChkBoomRemixes.jpg'
+				    data-intro='Stray Kids，7月22日发行Remix单曲专辑《Chk Chk Boom (Remixes)》！<br>
+					- 将要“席卷国内外音乐市场”的SKZ, 7月19日发行新作品《ATE》并盛大回归！且以Remix单曲延续热度！<br>
+					- 新作《Chk Chk Boom》，收录了丰富多彩的Remix版本和Instrumental等共4首歌曲！'
+				    data-tracks=
+						'01 Chk Chk Boom|【Stray Kids 评论】<br>
+						描述了比任何人都能更加完美地瞄准想要的目标的自信心。以Stray Kids的方式诠释的拉丁风格嘻哈节奏里的中毒性的Loop、慵懒独特的Topline和歌词融会贯通，是一首可以感受到新魅力的歌曲。<br><br>
+						作词：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)<br>
+						作曲：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)、Dallas Koehlke、Ronnie Icon、BB ELLIOT<br>
+						编曲：DallasK、方灿 (3RACHA)、RESTART、채강해<br>
+						所有乐器：DallasK、方灿 (3RACHA)、RESTART、채강해<br>
+						和声：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)、李龙馥<br>
+						数字编辑：이경원、方灿 (3RACHA)<br>
+						录音：구혜진 @ JYPE Studios，方灿 (3RACHA) @ Channie’s “Room”;
+						02 Chk Chk Boom (Deadeye Ver.) |【Stray Kids 评论】<br>
+						节奏感十足的Ratchet Beat与强烈的合成器声音绝妙组合的嘻哈风格Remix歌曲，原曲的中毒性的Riff转变为暗黑的声音，涌出了爆发性的能量。<br><br>
+						作词：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)<br>
+						作曲：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)、Dallas Koehlke、Ronnie Icon、BB ELLIOT<br>
+						编曲：DallasK、方灿 (3RACHA)、RESTART、채강해<br>
+						混音：VERSACHOI<br>
+						和声：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)、李龙馥<br>
+						数字编辑：이경원、方灿 (3RACHA)<br>
+						录音：구혜진 @ JYPE Studios，方灿 (3RACHA) @ Channie’s “Room”;
+						03 Chk Chk Boom (Heatwave Ver.) |【Stray Kids 评论】<br>
+						这是将原曲的慵懒感极大化的拉丁流行风格的Remix歌曲。如同炎炎夏日里的热气，用拉丁风格独特声音表现了Stray Kids热情又悠闲的样子。<br><br>
+						作词：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)<br>
+						作曲：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)、Dallas Koehlke、Ronnie Icon、BB ELLIOT<br>
+						编曲：DallasK、方灿 (3RACHA)、RESTART、채강해<br>
+						混音：HotSauce<br>
+						和声：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)、李龙馥<br>
+						数字编辑：이경원、方灿 (3RACHA)<br>
+						录音：구혜진 @ JYPE Studios，方灿 (3RACHA) @ Channie’s “Room”;
+						04 Chk Chk Boom (Instrumental) |<br>
+						作曲：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)、Dallas Koehlke、Ronnie Icon、BB ELLIOT<br>
+						编曲：DallasK、方灿 (3RACHA)、RESTART、채강해<br>
+						所有乐器：DallasK、方灿 (3RACHA)、RESTART、채강해<br>'>
+				    <div class="album-card">
+						<img src='img/AlbumCover/ChkChkBoomRemixes.jpg' alt="Chk Chk Boom (Remixes)">
+						<div class="info">
+							<strong>Chk Chk Boom (Remixes)</strong>
+							<div class="date">2024-07-22</div>
+						</div>
+					</div>
+				</a>
+			
+			<!-- ATE -->
+				<a class="album-link" href='DiscographyDetail.html'
+				    data-title='ATE'
+				    data-date='2024-07-19'
+				    data-cover='img/AlbumCover/ATE.jpg'
+				    data-intro='Stray Kids 于7月19日发行全新迷你专辑《ATE》和主打歌《Chk Chk Boom》！<br>
+					- 主打歌《Chk Chk Boom》蕴含了Stray Kids比任何人都能完美瞄准目标的、理所当然的自信感。“胜利吃得太多了，好饱”、“我的步伐仍然代入下一个level”，威风凛凛的歌词给听众带来了刺激的能量，且拉丁风格嘻哈节奏上中毒性的Loop和慵懒独特的Topline将会使得听众们反复收听。”'
+				    data-tracks=
+						'01 MOUNTAINS|【Stray Kids 评论】<br>
+						添加了强烈的吉他和合成器的Epic风格歌曲，充满活力的贝斯和架子鼓声增添了雄壮感。展现了登上了高山山顶的Stray Kids的自信感和强大的能量，收录为专辑的开场曲。<br><br>
+						作词：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)<br>
+						作曲：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)、VERSACHOI<br>
+						编曲：VERSACHOI、方灿 (3RACHA)<br>
+						所有乐器：VERSACHOI、方灿 (3RACHA)<br>
+						电脑编程：VERSACHOI、方灿 (3RACHA)<br>
+						和声：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)、李龙馥<br>
+						数字编辑：이경원、方灿 (3RACHA);
+						02 Chk Chk Boom *TITLE|【Stray Kids 评论】<br>
+						描述了比任何人都能更加完美地瞄准想要的目标的自信心。以Stray Kids的方式诠释的拉丁风格嘻哈节奏里的中毒性的Loop、慵懒独特的Topline和歌词融会贯通，是一首可以感受到新魅力的歌曲。<br><br>
+						作词：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)<br>
+						作曲：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)、Dallas Koehlke、Ronnie Icon、BB ELLIOT<br>
+						编曲：DallasK、方灿 (3RACHA)、RESTART、채강해<br>
+						所有乐器：DallasK、方灿 (3RACHA)、RESTART、채강해<br>
+						和声：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)、李龙馥<br>
+						数字编辑：이경원、方灿 (3RACHA)<br>
+						录音：구혜진 @ JYPE Studios，方灿 (3RACHA) @ Channie’s “Room”;
+						03 JJAM|【Stray Kids 评论】<br>
+						这是一首以强烈的合成器开头，能感受到歌曲结构层次丰富的歌曲。歌曲具备Stray Kids特有的独特、愉快的要素。想象着每个组展开的“RACHA JAM”舞台会有多欢乐，听的时候会加倍有趣。<br><br>
+						作词：方灿 (3RACHA)、徐彰彬 (3RACHA)<br>
+						作曲：方灿 (3RACHA)、徐彰彬 (3RACHA)、RESTART、채강해<br>
+						编曲：RESTART、채강해、方灿 (3RACHA)<br>
+						和声：方灿 (3RACHA)、徐彰彬 (3RACHA)、金昇玟、梁精寅<br>
+						录音：임찬미、구혜진 @ JYPE Studios，方灿 (3RACHA) @ Channie’s “Room”;
+						04 I Like It|【Stray Kids 评论】<br>
+						这是一首明亮的合成器声音和强烈的Drill Beat的构成反转魅力的Stray Kids牌流行舞曲。描述了在无法定义关系的现在，坦率地表现我们关系好的歌词是其亮点。<br><br>
+						作词：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)、JBACH<br>
+						作曲：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)、Nathan Cunningham、Marc Sibley、JBACH<br>
+						编曲：Space Primates、方灿 (3RACHA)<br>
+						和声：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)<br>
+						数字编辑：方灿 (3RACHA)<br>
+						录音：구혜진 @ JYPE Studios，方灿 (3RACHA) @ Channie’s “Room”;
+						05 Runners|【Stray Kids 评论】<br>
+						这是一首增添了嘻哈节奏的Drum and Bass风格歌曲，强烈而又感性的传达了“继续不停地向前奔跑”的抱负。<br><br>
+						作词：方灿 (3RACHA)、李龙馥<br>
+						作曲：方灿 (3RACHA)、李龙馥、VERSACHOI<br>
+						编曲：VERSACHOI<br>
+						和声：方灿 (3RACHA)、李龙馥<br>
+						录音：구혜진 @ JYPE Studios，方灿 (3RACHA) @ Channie’s “Room”;
+						06 Twilight|【Stray Kids 评论】<br>
+						让人联想到凄凉又美丽的凌晨氛围的感性歌声和钢琴演奏相结合的歌曲，将对对方的思念和空虚感像独白般平静地表现了出来。<br><br>
+						作词：韩知城 (3RACHA)<br>
+						作曲：韩知城 (3RACHA)、RESTART、채강해<br>
+						编曲：RESTART、채강해<br>
+						和声：韩知城 (3RACHA);
+						07 Stray Kids|【Stray Kids 评论】<br>
+						这是一首描写了Stray Kids故事的抒情式Drum and Bass风格的舞曲，从Pre-Debut曲《Hellevator》开始，描绘了永远不会停止的《Stray Kids》的叙事。这是献给在成为现在的Stray Kids的路上，一直陪伴在左右的所有人的歌曲。<br><br>
+						作词：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)<br>
+						作曲：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)、Dallas Koehlke、Ronnie Icon<br>
+						编曲：DallasK<br>
+						和声：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)<br>
+						录音：구혜진 @ JYPE Studios，方灿 (3RACHA) @ Channie’s “Room”;
+						08 Chk Chk Boom (Festival Ver.)|【Stray Kids 评论】<br>
+						主打歌《Chk Chk Boom》的Remix版本，重新诠释为适合庆典的歌曲。<br><br>
+						作词：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)<br>
+						作曲：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)、Dallas Koehlke、Ronnie Icon、BB ELLIOT<br>
+						编曲：DallasK、方灿 (3RACHA)、RESTART、채강해<br>
+						混音：DallasK<br>
+						所有乐器：DallasK、方灿 (3RACHA)、RESTART、채강해<br>
+						和声：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)、李龙馥<br>
+						数字编辑：이경원、方灿 (3RACHA)<br>
+						录音：구혜진 @ JYPE Studios，方灿 (3RACHA) @ Channie’s “Room'>
+				    <div class="album-card">
+						<img src='img/AlbumCover/ATE.jpg' alt="ATE">
+						<div class="info">
+							<strong>ATE</strong>
+							<div class="date">2024-07-19</div>
+						</div>
+					</div>
+				</a>
+			
+			<!-- Lose my breath -->
+				<a class="album-link" href='DiscographyDetail.html'
+				    data-title='Lose my breath'
+				    data-date='2024-05-10'
+				    data-cover='img/AlbumCover/LoseMyBreath.jpg'
+				    data-intro='K-POP大势组合Stray Kids，5月10日发行全新单曲《Lose My Breath (Feat. Charlie Puth)》！<br>
+					- “SKZ X Charlie Puth” 全球流行歌手们的历代级合作！满足全球音乐粉丝期待的高品质音乐已上线！<br>
+					- “面对令人心跳漏拍的陌生情感的瞬间” ，新歌强烈的歌词与感性的吉他琶音形成鲜明对比！'
+				    data-tracks='01 Lose My Breath (Feat. Charlie Puth) *title|这是一首流行舞曲，歌曲表达了与对方初次见面时的陌生情感。将令人心跳漏拍的特别感觉原封不动地表现出来的重复的副歌旋律是歌曲核心，且Stray Kids 和 Charlie Puth 共同打造的温柔合声增添别样魅力。这是一首凸显与强烈的歌词形成鲜明对比的感性吉他琶音、凸显轻快简约的synth lead的歌曲。<br><br>
+					作词：Charlie Puth、Jacob Kasher Hindlin、Naliya、方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)<br>
+					作曲：Charlie Puth、方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)、Johnny Goldstein<br>
+					编曲：Charlie Puth、Johnny Goldstein、方灿 (3RACHA)<br>
+					人声指导：Charlie Puth、Johnny Goldstein、方灿 (3RACHA)<br>
+					和声：Charlie Puth、方灿 (3RACHA);
+					02 Lose My Breath (Feat. Charlie Puth) (Instrumental)|<br>
+					作曲：Charlie Puth、方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)、Johnny Goldstein<br>
+					编曲：Charlie Puth、Johnny Goldstein、方灿 (3RACHA)<br>
+					人声指导：Charlie Puth、Johnny Goldstein、方灿 (3RACHA)<br>
+					和声：Charlie Puth、方灿 (3RACHA)'>
+				    <div class="album-card">
+						<img src='img/AlbumCover/LoseMyBreath.jpg' alt="Lose my breath">
+						<div class="info">
+							<strong>Lose my breath</strong>
+							<div class="date">2024-05-10</div>
+						</div>
+					</div>
+				</a>
+			
+			<!-- WHY? -->
+				<a class="album-link" href='DiscographyDetail.html'
+				    data-title='WHY?'
+				    data-date='2024-04-12'
+				    data-cover='img/AlbumCover/Why.jpg'
+				    data-intro='Stray Kids首次演唱日剧主题曲！<br>
+					- 新曲《WHY?》作为日剧《Re:Revenge -在欲望的尽头-》主题曲！'
+				    data-tracks='01 WHY?|Stray Kids首次演唱的日剧主题曲《WHY?》作为赤楚卫二和锦戸亮共演日剧《Re:Revenge -在欲望的尽头-》主题曲，以洗脑的旋律和节奏感架构出与戏剧作品相符的反乌托邦意境。<br><br>
+						作词：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)、D&H (PURPLE NIGHT)、Yohei<br>
+						作曲：方灿 (3RACHA)、徐彰彬 (3RACHA)、홍지상、韩知城 (3RACHA)<br>
+						编曲：홍지상'>
+				    <div class="album-card">
+						<img src='img/AlbumCover/Why.jpg' alt="WHY?">
+						<div class="info">
+							<strong>WHY?</strong>
+							<div class="date">2024-04-12</div>
+						</div>
+					</div>
+				</a>
+			
+			<!-- Rock-Star -->
+				<a class="album-link" href='DiscographyDetail.html'
+				    data-title='Rock-Star'
+				    data-date='2023-11-10'
+				    data-cover='img/AlbumCover/RockStar.jpg'
+				    data-intro='《樂-STAR》是继第三张正规专辑发行后，时隔5个月推出的全新专辑，与前作《★★★★★(5-STAR)》有着密切联系。包含"懂得享受的特别之人"含义的同时，也表达了组合想要成为风靡一时的摇滚明星的雄心壮志。特别是从“在任何情况下，我们的Rock（樂）都会持续下去”的歌词中，充分可以感受到Stray Kids想要打造出能够与全世界所有听众共同享受此次音乐作品的强烈自信感。'
+				    data-tracks=
+						'01 MEGAVERSE|【Stray Kids 评论】<br>
+						迷你专辑《樂-STAR》的第一首track《MEGAVERSE》以简洁的节奏和强烈的base sound为基础，既又节制又充满凝聚能量。通过这首歌大家在感受Stray Kids牌特有的强烈歌词所编织成的"Mega级Verse"的同时又可以体会到属于我们"多彩又独一无二的世界观"。请尽情享受用节奏转换和左右席卷而来的声音所完成的"MEGAVERSE"吧！<br><br>
+						作词：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)<br>
+						作曲：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)、VERSACHOI<br>
+						编曲：VERSACHOI、方灿 (3RACHA)<br>
+						所有乐器：VERSACHOI、方灿 (3RACHA)<br>
+						和声：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)<br>
+						录音：구혜진 @ JYPE Studios，方灿 (3RACHA) @ Channie’s “Room”;
+						02 樂（LALALALA） *TITLE|【Stray Kids 评论】<br>
+						主打曲《樂（LALALALA）》是一首以Phonk sound和Afrobeats类型节奏为基础，以distotion base展开的旋律为主调的歌曲，给人独特感的同时提升了听众的兴趣。利用"樂（Rock）"这个字，多种文字含义的歌词表现形式增添趣味感，副歌部分通过反复的"Lalalala"和摇滚要素，展现出中毒性和强烈感。想要制作出像歌曲名一样可以一起享受氛围的音乐，唱出了"在任何苦恼或逆境的情况下,我们的樂都会持续下去"的觉悟。<br><br>
+						作词：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)<br>
+						作曲：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)、VERSACHOI、Kevin Gomringer、Tim Gomringer、Luis Bacque<br>
+						编曲：VERSACHOI、方灿 (3RACHA)、Cubeatz<br>
+						所有乐器：VERSACHOI、方灿 (3RACHA)、Cubeatz<br>
+						和声：Stray Kids;
+						03 BLIND SPOT|【Stray Kids 评论】<br>
+						为了能够完美发光，将无人知晓，独自磨练的秘密空间表现为"死角地带"。能够感受到速度感的节奏和充满力量的vocal提升了整首歌曲的能量。歌词中包含着 "相信自己所走过的路，虽然未来还未确定，但堂堂正正向前的样子异常美丽，这样的我们就是胜者"的深刻意义，希望听到这首歌的人们能够从中感受到勇气和希望。<br><br>
+						作词：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)<br>
+						作曲：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)、Willie Weeks<br>
+						编曲：Willie Weeks、方灿 (3RACHA)<br>
+						和声：方灿 (3RACHA)、韩知城 (3RACHA);
+						04 COMFLEX|【Stray Kids 评论】<br>
+						《COMFLEX》通过巧妙的Top Line和充满中毒性的电音，展现了属于我们的从容和霸气。 将COMPLEX和FLEX两个单词合二为一的歌名"COMFLEX"和表现"自身瑕疵魅力"的歌词中，可以感受到"我们不会隐藏弱点，而是将它打磨出光芒变成强项"的抱负。<br><br>
+						作词：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)<br>
+						作曲：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)、Millionboy<br>
+						编曲：Millionboy<br>
+						和声：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)<br>
+						录音：구혜진 @ JYPE Studios，方灿 (3RACHA) @ Channie’s “Room”;
+						05 Cover Me|【Stray Kids 评论】<br>
+						这是一首将漫漫长夜，希望某个人可以来遮住这让人无法入睡的明朗月光的心情全部倾诉在歌词中的温暖又充满感性的歌曲。“月光如此耀眼的夜晚，谁可以来遮住那刺眼的光亮，逐渐走向尽头的长夜，在新的光亮升起时请接受它吧”。以感性的acoustic旋律开始，到后半部分逐渐激昂的感情全部用沉重的电吉他音进行了诠释。<br><br>
+						作词：黄铉辰、方灿 (3RACHA)<br>
+						作曲：黄铉辰、方灿 (3RACHA)、Nickko Young<br>
+						编曲：方灿 (3RACHA)、Nickko Young<br>
+						所有乐器：方灿 (3RACHA)、Nickko Young<br>
+						和声：方灿 (3RACHA);
+						06 Leave|【Stray Kids 评论】<br>
+						这首歌讲述了在给予互相更多伤害之前结束这场爱恋，忍痛送走对方的故事。"为了彼此而上演的结局"等哀切深情的歌词和反复的吉他声表现出了凄凉的氛围感，让人联想到树叶飘落的秋天。<br><br>
+						作词：徐彰彬 (3RACHA)、方灿 (3RACHA)<br>
+						作曲：徐彰彬 (3RACHA)、方灿 (3RACHA)、JUN2<br>
+						编曲：JUN2、方灿 (3RACHA)<br>
+						电脑编程：JUN2、方灿 (3RACHA)<br>
+						和声：方灿 (3RACHA);
+						07 Social Path (Feat. LiSA) (Korean Ver.)|【Stray Kids 评论】<br>
+						这是与日本著名歌手LiSA的第一首合作歌曲,也是包含"开拓道路"意义的Social Path韩语版，表现了"为了未来,一直把青春押注在音乐上"的主题。是一首以Drum&Bass类型为基础，同时具备Rock Sound和充满力量的vocal魅力的歌曲。<br><br>
+						作词：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)<br>
+						作曲：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)、VERSACHOI<br>
+						编曲：VERSACHOI<br>
+						和声：Stray Kids;
+						08 락 (樂) (Rock Ver.)|【Stray Kids 评论】<br>
+						将主打曲《樂》以金属体裁全新诠释的版本，与原歌名相符的强烈乐队Sound和成员们压倒性的能量与歌曲本身完美契合，将属于Stray Kids的魅力极大化。<br><br>
+						作词：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)<br>
+						作曲：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)、VERSACHOI、Kevin Gomringer、Tim Gomringer、Luis Bacque<br>
+						编曲：VERSACHOI、方灿 (3RACHA)、Cubeatz、Nickko Young<br>
+						混音：DallasK<br>
+						所有乐器：DallasK、方灿 (3RACHA)、RESTART、채강해<br>
+						和声：Stray Kids'>
+				    <div class="album-card">
+						<img src='img/AlbumCover/RockStar.jpg' alt="Rock-Star">
+						<div class="info">
+							<strong>Rock-Star</strong>
+							<div class="date">2023-11-10</div>
+						</div>
+					</div>
+				</a>
+			
+			<!-- Social Path /Super Bowl -->
+				<a class="album-link" href='DiscographyDetail.html'
+				    data-title='Social Path /Super Bowl'
+				    data-date='2023-09-06'
+				    data-cover='img/AlbumCover/SocialPath.jpg'
+				    data-intro='Stray Kids与日本歌手合作单曲《Social Path /Super Bowl》！'
+				    data-tracks='
+						01 Social Path|这是与日本著名歌手LiSA的第一首合作歌曲,也是包含"开拓道路"意义的Social Path韩语版，表现了"为了未来,一直把青春押注在音乐上"的主题。是一首以Drum&Bass类型为基础，同时具备Rock Sound和充满力量的vocal魅力的歌曲。<br><br>
+						词：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)、Yohei<br>
+						曲：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)、VERSACHOI<br>
+						编曲：VERSACHOI;
+						02 Super Bowl -Japanese ver.-|<br>
+						词：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)、李龙馥、KM-MARKIT<br>
+						曲：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)、Zack Djurich<br>
+						编曲：方灿 (3RACHA)、Zack Djuric;
+						03 Butterflies|<br>
+						词：方灿 (3RACHA)、VERSACHOI、D&H (PURPLE NIGHT)、Yohei<br>
+						曲：方灿 (3RACHA)、VERSACHOI<br>
+						编曲：方灿 (3RACHA)、VERSACHOI;
+						04 Social Path (Instrumental)|<br>
+						曲：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)、VERSACHOI<br>
+						编曲：VERSACHOI;
+						05 Butterflies (Instrumental)|<br>
+						曲：方灿 (3RACHA)、VERSACHOI<br>
+						编曲：方灿 (3RACHA)、VERSACHOI'>
+				    <div class="album-card">
+						<img src='img/AlbumCover/SocialPath.jpg' alt="Social Path /Super Bowl">
+						<div class="info">
+							<strong>Social Path /Super Bowl</strong>
+							<div class="date">2023-09-06</div>
+						</div>
+					</div>
+				</a>
+			
+			<!-- 5-STAR -->
+				<a class="album-link" href='DiscographyDetail.html'
+				    data-title='5-STAR'
+				    data-date='2023-06-02'
+				    data-cover='img/AlbumCover/5-Star.jpg'
+				    data-intro='K-POP大势组合"Stray Kids, 6月2日发行第三张正规专辑"★★★★★(5-STAR)"'
+				    data-tracks=
+						'01 Hall of Fame|【Stray Kids 评论】<br>
+						像伟人传中的伟人一样，将书写历史的抱负融入歌词中,表现了Stray Kids对攀登顶峰的恳切和自信。奇妙的乐器source令人印象深刻，副歌部分有重量的摇滚声和节奏增添了粗糙的雄壮感。<br><br>
+						作词：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)<br>
+						作曲：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)、VERSACHOI<br>
+						编曲：VERSACHOI、方灿 (3RACHA)<br>
+						电脑编程：RESTART、채강해、方灿 (3RACHA)<br>
+						和声：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA);
+						02 S-Class *title|【Stray Kids 评论】<br>
+						主打曲是一首能够充分体现Stray Kids特别之处的充满新鲜感和挑战性的歌曲。包含着"特别的人之中最特别的，特别的人之中最闪耀的"信息，穿梭于多种Sound source和音乐风格之间，仿佛是将多首歌曲融为一体的歌曲编排激发着大家的好奇心，独特又令人上瘾的副歌部分是此次歌曲的亮点。<br><br>
+						作词：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)<br>
+						作曲：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)、채강해、RESTART<br>
+						编曲：方灿 (3RACHA)、VERSACHOI<br>
+						所有乐器：채강해、RESTART、方灿 (3RACHA)<br>
+						电脑编程：채강해、RESTART、方灿 (3RACHA)<br>
+						和声：Stray Kids<br>
+						数字编辑：RESTART、方灿 (3RACHA);
+						03 ITEM|【Stray Kids 评论】<br>
+						这首歌曲表达了即便没有特别的ITEM，我们本身所拥有的巨大协同效应和能力也会让我们充满自信。通过像游戏特效音般的sound和有趣的歌词，展现了各成员鲜明的个性和Stray Kids独有的魅力。<br><br>
+						作词：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)<br>
+						作曲：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)、VERSACHOI<br>
+						编曲：VERSACHOI、方灿 (3RACHA)<br>
+						电脑编程：VERSACHOI、方灿 (3RACHA)<br>
+						和声：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA);
+						04 Super Bowl|【Stray Kids 评论】<br>
+						如歌名"Super Bowl"一样，感受像美式足球冠军争夺战《超级碗》一样巨大规模的自信感。辛辣的歌词中隐藏了很多像调料般丰富多彩的表达方式，如同听ASMR吃播一样的低语，会让大家的耳朵“大饱口福”。再加上各种强烈的乐器音，是一首充满痛快感的"美味"歌曲。<br><br>
+						作词：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)<br>
+						作曲：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)、Zack Djurich<br>
+						编曲：Zack Djurich、方灿 (3RACHA)<br>
+						所有乐器：Zack Djurich、方灿 (3RACHA)<br>
+						电脑编程：Zack Djurich、方灿 (3RACHA)<br>
+						和声：Stray Kids;
+						05 TOPLINE (Feat. Tiger JK)|【Stray Kids 评论】<br>
+						"划定我们的界限 TOPLINE"是一首能够感受属于我们Stray Kids自信和霸气的歌曲，将我们制作的音乐，TOPLINE迈向得更高更远的信息比喻为多样的line。非常荣幸有这次机会可以和传奇艺人Tiger JK前辈一起合作。正因为有前辈的参与，整首歌增添了属于Old School嘻哈独有的魅力和雄壮感。Tiger JK大哥，爱您。<br><br>
+						作词：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)、Tiger JK<br>
+						作曲：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)、VERSACHOI<br>
+						编曲：VERSACHOI<br>
+						和声：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)、李龙馥;
+						06 DLC|【Stray Kids 评论】<br>
+						是一首包含"停止各种杂念和顾虑，疯狂跳舞吧"内容的歌曲。想象着听这首歌的许多人对歌词产生共鸣，一起跳舞玩耍的画面进行制作，循环的副歌部分令人印象深刻，以强烈的Brass、Moombahton律动合奏表现出了能量和节奏感。<br><br>
+						作词：徐彰彬 (3RACHA)、RESTART<br>
+						作曲：徐彰彬 (3RACHA)、RESTART<br>
+						编曲：RESTART、徐彰彬 (3RACHA)<br>
+						和声：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA);
+						07 GET LIT|【Stray Kids 评论】<br>
+						抓住整首歌曲氛围的电音和以"GET LIT"作为亮点的歌词，是一首欢快的嘻哈电子类型歌曲。可以感受到Stray Kids所谓"狂气"的歌词和旋律，融入了"摆脱烦闷的日常生活，今天来玩到底吧"的信息。<br><br>
+						作词：韩知城 (3RACHA)<br>
+						作曲：韩知城 (3RACHA)、채강해、RESTART<br>
+						编曲：채강해、RESTART<br>
+						和声：韩知城 (3RACHA);
+						08 Collosion|【Stray Kids 评论】<br>
+						以"人与人之间的冲突"为主题，表现了在复杂的情况下所讲的话引发冲突的样子。是第二部分副歌旋律非常令人印象深刻的Easy Listening类型的歌曲。<br><br>
+						作词：韩知城 (3RACHA)<br>
+						作曲：韩知城 (3RACHA)、Millionboy<br>
+						编曲：Millionboy<br>
+						和声：韩知城 (3RACHA);
+						09 FNF|【Stray Kids 评论】<br>
+						这是一首将我们(方灿,Felix)故乡澳大利亚几年前发生特大山火时，看到众多动植物失去生命而感到惋惜、歉意和思念的感情比喻为失去某个珍贵之人时的心情从而写出的歌曲。<br><br>
+						作词：方灿 (3RACHA)、李龙馥<br>
+						作曲：方灿 (3RACHA)、李龙馥、Trippy<br>
+						编曲：Trippy、方灿 (3RACHA)<br>
+						所有乐器：Trippy、方灿 (3RACHA)<br>
+						电脑编程：Trippy、方灿 (3RACHA)<br>
+						和声：方灿 (3RACHA)、李龙馥;
+						10 Youtiful|【Stray Kids 评论】<br>
+						这首歌以"你的存在本身就很美"为主题，饱含了想对我们STAY说的话。这是一首以感性的钢琴声、情绪饱满的吉他伴奏和柔和声线相融合，传达温暖安慰的歌曲。平时总对我们倾诉美好话语的STAY，这次我们想将这些话唱给大家来听。<br><br>
+						作词：方灿 (3RACHA)<br>
+						作曲：方灿 (3RACHA)、Nickko Young<br>
+						编曲：Nickko Young<br>
+						和声：方灿 (3RACHA);
+						11 THE SOUND (Korean Ver.)|【Stray Kids 评论】<br>
+						作为第一张正规日专的主打曲，表现出了专属Stray Kids的音乐特点。用只属于我们的独特歌词，在旋律上特有的连珠炮说唱、充满力量的舞蹈来抓住大家眼睛和耳朵的《THE SOUND》，这次能够以韩语版本亮相我们也感到非常开心。符合"彷徨的孩子们"的组合名，包含"与全世界Stray的人们一起前进"抱负的雄壮歌词，传达了"只属于我们的声音，用我们的声音堂堂正正地前进"的内容和气势。<br><br>
+						作词：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)<br>
+						作曲：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)、Zack Djurich、Kyle Reynolds、Chris LaRocca<br>
+						编曲：Zack Djurich、Kyle Reynolds、方灿 (3RACHA)、Chris LaRocca<br>
+						所有乐器：Zack Djurich、方灿 (3RACHA)<br>
+						电脑编程：Zack Djurich、方灿 (3RACHA)<br>
+						和声：Stray Kids<br>
+						声乐指导：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)<br>
+						数字制作：이경원、방찬 (3RACHA);
+						12 Time Out|【Stray Kids 评论】<br>
+						是回忆着成员们一起去江原道休假时的幸福时光，能够无忧无虑大笑的快乐瞬间而制作的歌曲。就像《Time Out》的歌名一样，用如盛夏大海般清爽的摇滚体裁，表达出了将"抛开苦恼和担心，随着微风一起出发"的信息。<br><br>
+						作词：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)<br>
+						作曲：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)、VERSACHOI、JUN2<br>
+						编曲：VERSACHOI、方灿 (3RACHA)、JUN2<br>
+						和声：方灿 (3RACHA)<br>
+						录音：方灿 (3RACHA) @ Channie’s “Room”'>
+				    <div class="album-card">
+						<img src='img/AlbumCover/5-Star.jpg' alt="5-STAR">
+						<div class="info">
+							<strong>5-STAR</strong>
+							<div class="date">2023-06-02</div>
+						</div>
+					</div>
+				</a>
+			
+			<!-- The Sound -->
+				<a class="album-link" href='DiscographyDetail.html'
+				     data-title='The Sound'
+				     data-date='2023-02-22'
+				     data-cover='img/AlbumCover/TheSound.jpg'
+				     data-intro='Stray Kids日文正规专辑《The Sound》发布！'
+				     data-tracks='01 The Sound*title|【Stray Kids 评论】<br>
+					 作为第一张正规日专的主打曲，表现出了专属Stray Kids的音乐特点。用只属于我们的独特歌词，在旋律上特有的连珠炮说唱、充满力量的舞蹈来抓住大家眼睛和耳朵的《THE SOUND》，这次能够以韩语版本亮相我们也感到非常开心。符合"彷徨的孩子们"的组合名，包含"与全世界Stray的人们一起前进"抱负的雄壮歌词，传达了"只属于我们的声音，用我们的声音堂堂正正地前进"的内容和气势。<br><br>
+					 作词：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)、D＆H (PURPLE NIGHT)<br>
+					 作曲：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)、Zack Djurich、Kyle Reynolds;
+					 02 Battle Ground|<br>
+					 作词：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)、KM-MARKIT<br>
+					 作曲：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)、FRANTS;
+					 03 Lost Me|<br>
+					 作词：徐彰彬 (3RACHA)、SUNNY BOY(TinyVoice,Production)<br>
+					 作曲：徐彰彬 (3RACHA)、方灿 (3RACHA)、VERSACHOI;
+					 04 DLMLU|<br>
+					 作词：黄铉辰、Yohei<br>
+					 作曲：黄铉辰、方灿 (3RACHA)、VERSACHOI;
+					 05 Novel|<br>
+					 作词：金昇玟、KM-MARKIT<br>
+					 作曲：金昇玟、方灿 (3RACHA)、Nickko Young;
+					 06 CASE 143 -Japanese ver.-|<br>
+					 作词：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)、Raphael (Producing Lab.)、Daviid (３SCAPE)、Yosia (３SCAPE)<br>
+					 作曲：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)、Raphael (Producing Lab.)、Daviid (３SCAPE)、Yosia (３SCAPE);
+					 07 CHILL -Japanese ver.-|<br>
+					 作词：韩知城 (3RACHA)、KM-MARKIT<br>
+					 作曲：韩知城 (3RACHA)、方灿 (3RACHA);
+					 08 Scars|<br>
+					 作词：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)、KM-MARKIT<br>
+					 作曲：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)、KM-MARKIT<br>
+					 编曲：方灿 (3RACHA)、Versachoi;
+					 09 Thounderous -Japanese ver.-|<br>
+					 作词：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)、KM-MARKIT<br>
+					 作曲：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)、HotSauce;
+					 10 There|<br>
+					 作词：徐彰彬 (3RACHA)、方灿 (3RACHA)、KM-MARKIT<br>
+					 作曲：徐彰彬 (3RACHA)、方灿 (3RACHA)、JUN2'>
+				    <div class="album-card">
+						<img src='img/AlbumCover/TheSound.jpg' alt="The Sound">
+						<div class="info">
+							<strong>The Sound</strong>
+							<div class="date">2023-02-22</div>
+						</div>
+					</div>
+				</a>
+			
+			<!-- SKZ-REPLAY -->
+				 <a class="album-link" href='DiscographyDetail.html'
+				     data-title='SKZ-REPLAY'
+				     data-date='2022-11-21'
+				     data-cover='img/AlbumCover/Skz-Replay.jpg'
+				     data-intro='Stray Kids, 于12月21日下午6点发布包含全体成员亲自制作的SOLO曲的数码专辑"SKZ-REPLAY"<br>
+					- 包含所有成员亲自制作的solo曲，自制内容中先公开的track作为正式音源发行！<br>
+					- 再次印证"创作型组合"的广泛能力！ 全员参与制作，个性鲜明，表现对音乐的真诚性<br>
+					- "实现STEP OUT 2022公约" 收录个性满分的主打曲《FAM(Korean Ver.)》和充满对粉丝爱意的《#Love STAY》'
+				     data-tracks='01 FAM (Korean Ver.) *Title|【Stray Kids 评论】<br>
+					 《FAM》是一首介绍8名成员魅力的歌曲,充满了Stray Kids独有的和睦感与团结感。除了能感受到独一无二基调的强烈嘻哈音乐将欢快的氛围推向高潮，在公演场与STAY一起演唱时,幸福感增至8倍。很高兴能通过这次机会正式发行韩文版音源。<br><br>
+					 作词：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)<br>
+					 作曲：方灿 (3RACHA)、徐彰彬 (3RACHA)、韩知城 (3RACHA)、VERSACHOI<br>
+					 编曲：方灿 (3RACHA)、VERSACHOI<br>
+					 所有乐器：方灿 (3RACHA)、VERSACHOI<br>
+					 录音：方灿 (3RACHA) @ Channie’s “Room”;
+					 02 Connected (Bang Chan)|【Bang Chan’s 评论】<br>
+					 “A song about destined connections”<br>
+					 通过这次SKZ-REPLAY展现的《Connected》是Bang Chan的第二首个人单曲，用"No turning back once we’re connected"等歌词表现了"命运般的连接"。<br><br>
+					 作词：方灿 (3RACHA)<br>
+					 作曲：方灿 (3RACHA)、VERSACHOI<br>
+					 编曲：方灿 (3RACHA)、VERSACHOI<br>
+					 所有乐器：方灿 (3RACHA)、VERSACHOI<br>
+					 电脑制作：方灿 (3RACHA)、VERSACHOI<br>
+					 数字制作：方灿 (3RACHA)<br>
+					 录音：方灿 (3RACHA) @ Channie’s “Room”;
+					 03 Limbo (Lee Know)|【Lee Know’s 评论】<br>
+					 通过想象面对不可避免的离别，虽然知道应该强烈地推开对方，但其实内心还没有做好送走对方的准备，仍想挽留的情景来完成歌曲。哀切的声线与歌曲氛围融合在一起，将感性最大化。<br><br>
+					 ;
+					 04 DOODLE (Changbin)|【Changbin’s 评论】<br>
+					 以独特的声音和节奏描绘了不被固定框架束缚的自由生活，表现出了即使在别人眼中像涂鸦一样，也要亲自开拓新道路的抱负。 就像作为Stray Kids的Changbin和3RACHA的Changbin一直以来所做的一样，表现出了今后仍会坚守自己音乐的真实性和方向性。<br><br>
+					 ;
+					 05 Love Untold (Hyunjin)|【Hyunjin’s 评论】<br>
+					 摇滚和嘻哈风格将深情的氛围感极大化。 描绘了曾经无法对所爱之人传达出真心，面对离别后才领悟到感情，以及送走对方后后悔痛苦的样子。<br><br>
+					 ;
+					 06 RUN (HAN)|【HAN’s 评论】<br>
+					 将想要逃到某个地方的心情用"是啊，地球上没有我可以休息的地方吗，不管三七二十一用双脚跑过去吧,继续run"等歌词来表现的曲目。 希望能给这首歌的听众带来共鸣和安慰。<br><br>
+					 ;
+					 07 Deep end (Felix)|【Felix’s 评论】<br>
+					 表现了失恋后即使想向前走，但面对和相爱的人所积累的特别且幸福的回忆时，仍像陷入黑洞一样无尽孤独的瞬间。 即使下面深处的一切都漆黑一片，只要望向上面照耀你的光芒时，就能感受到内心深处的希望。<br><br>
+					 ;
+					 08 Stars and Raindrops (Seungmin)|【Seungmin’s 评论】<br>
+					 讲述了结束的关系中留下的遗憾，美丽的回忆变成"星星"，而后悔和惋惜则变成了"雨"降落在我身上的故事。 时间流逝，被美化了的记忆留给独自一人，唱出了怀念那些美丽瞬间的样子。 R&B、Trap、现代摇滚和雷鬼风格的节奏，在抒情氛围的基调中分区间进行了多样的展现。<br><br>
+					 ;
+					 09 Hug Me (I.N)|【I.N’s 评论】<br>
+					 表现了对恋人的心动和在一起的瞬间想要紧紧拥抱的青涩感情。 甜蜜的爱情歌曲中明朗活泼的旋律将浪漫的氛围极大化。<br><br>
+					 ;
+					 10 #LoveSTAY|【Stray Kids 评论】<br>
+					 每当想起出道后所有瞬间都陪在我们身边的STAY的珍贵的心意和积累的回忆时，都会写成歌词。 是一首描绘了一起走过四季的歌曲。<br><br>
+					 ;
+					 11 ZONE (Bang Chan, Changbin, HAN)
+					 ;
+					 12 Close (HAN)
+					 ;
+					 13 Streetlight (Changbin)
+					 ;
+					 14 i hate to admit (Bang Chan)
+					 ;
+					 15 I GOT IT (HAN)
+					 ;
+					 16 miss you (HYUNJIN)
+					 ;
+					 17 Maknae On Top (I.N)
+					 ;
+					 18 Alien (HAN)
+					 ;
+					 19 Because (Changbin, Felix)
+					 ;
+					 20 Piece of Puzzle (Changbin, Seungmin)
+					 ;
+					 21 Wish You Back (HAN)
+					 ;
+					 22 HaPpY (HAN)
+					 ;
+					 23 Up All Night (Bang Chan,Changbin, Felix, Seungmmin)
+					 ;
+					 24 Drive (Bang Chan, Lee Know)
+					 ;
+					 25 ice.cream (Hyunjin)
+					 '>
+				    <div class="album-card">
+				  <img src='img/AlbumCover/Skz-Replay.jpg' alt="SKZ-REPLAY">
+				  <div class="info">
+					<strong>SKZ-REPLAY</strong>
+					<div class="date">2022-11-21</div>
+				  </div>
+				</div>
+				</a>
+			<!-- MAXIDENT -->
+				<a class="album-link" href='DiscographyDetail.html'
+				     data-title='MAXIDENT'
+				     data-date='2022-10-21'
+				     data-cover='img/AlbumCover/Maxident.jpg'
+				     data-intro='Stray Kids迷你专辑《MAXIDENT》引发热潮！'
+				     data-tracks='01 Case 143|主打曲展现恋爱心动瞬间；'>
+				    <div class="album-card">
+				  <img src='img/AlbumCover/Maxident.jpg' alt="MAXIDENT">
+				  <div class="info">
+					<strong>MAXIDENT</strong>
+					<div class="date">2022-10-21</div>
+				  </div>
+				</div>
+				</a>
+			<!-- Circus -->
+				 <a class="album-link" href='DiscographyDetail.html'
+				     data-title='Circus'
+				     data-date='2022-06-22'
+				     data-cover='img/AlbumCover/Circus.jpg'
+				     data-intro='Stray Kids日文迷你专辑《Circus》上线！'
+				     data-tracks='01 Circus|马戏团主题展现奇幻舞台；'>
+				    <div class="album-card">
+				  <img src='img/AlbumCover/Circus.jpg' alt="Circus">
+				  <div class="info">
+					<strong>Circus</strong>
+					<div class="date">2022-06-22</div>
+				  </div>
+				</div>
+				</a>
+			<!-- Mixtape: Time Out -->
+				<a class="album-link" href='DiscographyDetail.html'
+				     data-title='Mixtape: Time Out'
+				     data-date='2022-08-01'
+				     data-cover='img/AlbumCover/TimeOut.jpg'
+				     data-intro='Stray Kids特别单曲《Time Out》上线！'
+				     data-tracks='01 Time Out|夏日清凉曲风带来轻松氛围；'>
+				    <div class="album-card">
+				  <img src='img/AlbumCover/TimeOut.jpg' alt="Mixtape: Time Out">
+				  <div class="info">
+					<strong>Mixtape: Time Out</strong>
+					<div class="date">2022-08-01</div>
+				  </div>
+				</div>
+				</a>
+			<!-- ODDINARY -->
+				 <a class="album-link" href='DiscographyDetail.html'
+				     data-title='ODDINARY'
+				     data-date='2022-03-18'
+				     data-cover='img/AlbumCover/Oddinary.jpg'
+				     data-intro='Stray Kids迷你专辑《ODDINARY》打破常规！'
+				     data-tracks='01 MANIAC|主打曲展现独特世界观；'>
+				    <div class="album-card">
+				  <img src='img/AlbumCover/Oddinary.jpg' alt="ODDINARY">
+				  <div class="info">
+					<strong>ODDINARY</strong>
+					<div class="date">2022-03-18</div>
+				  </div>
+				</div>
+				</a>
+			<!-- SKZ 2021 -->
+				<a class="album-link" href='DiscographyDetail.html'
+				     data-title='SKZ 2021'
+				     data-date='2021-12-23'
+				     data-cover='img/AlbumCover/SKZ2021.jpg'
+				     data-intro='Stray Kids精选专辑《SKZ 2021》上线！'
+				     data-tracks='01 Winter Falls|冬季抒情曲温暖上线；'>
+				    <div class="album-card">
+				  <img src='img/AlbumCover/SKZ2021.jpg' alt="SKZ 2021">
+				  <div class="info">
+					<strong>SKZ 2021</strong>
+					<div class="date">2021-12-23</div>
+				  </div>
+				</div>
+				</a>
+			<!-- Christmas Evel -->
+				<a class="album-link" href='DiscographyDetail.html'
+				     data-title='Christmas Evel'
+				     data-date='2021-11-29'
+				     data-cover='img/AlbumCover/ChristmasEvel.jpg'
+				     data-intro='Stray Kids圣诞特别专辑《Christmas Evel》上线！'
+				     data-tracks='01 Christmas Evel|节日氛围浓厚的圣诞歌曲；'>
+				    <div class="album-card">
+				  <img src='img/AlbumCover/ChristmasEvel.jpg' alt="Christmas Evel">
+				  <div class="info">
+					<strong>Christmas Evel</strong>
+					<div class="date">2021-11-29</div>
+				  </div>
+				</div>
+				</a>
+			<!-- Scar -->
+				<a class="album-link" href='DiscographyDetail.html'
+				     data-title='Scar'
+				     data-date='2021-10-13'
+				     data-cover='img/AlbumCover/Scar.jpg'
+				     data-intro='Stray Kids日文单曲《Scar》上线！'
+				     data-tracks='01 Scar|强烈节奏展现内心伤痕；'>
+				    <div class="album-card">
+				  <img src='img/AlbumCover/Scar.jpg' alt="Scar">
+				  <div class="info">
+					<strong>Scar</strong>
+					<div class="date">2021-10-13</div>
+				  </div>
+				</div>
+				</a>
+			<!-- NOEASY -->
+				 <a class="album-link" href='DiscographyDetail.html'
+				     data-title='NOEASY'
+				     data-date='2021-08-23'
+				     data-cover='img/AlbumCover/NOEASY.jpg'
+				     data-intro='Stray Kids正规二辑《NOEASY》震撼发布！'
+				     data-tracks='01 Thunderous|主打曲展现传统与现代融合；'>
+				    <div class="album-card">
+				  <img src='img/AlbumCover/NOEASY.jpg' alt="NOEASY">
+				  <div class="info">
+					<strong>NOEASY</strong>
+					<div class="date">2021-08-23</div>
+				  </div>
+				</div>
+				</a>
+			<!-- Mixtape: OH -->
+				<a class="album-link" href='DiscographyDetail.html'
+				     data-title='Mixtape: OH'
+				     data-date='2021-06-26'
+				     data-cover='img/AlbumCover/OH.jpg'
+				     data-intro='Stray Kids特别单曲《OH》上线！'
+				     data-tracks='01 OH|夏日清爽曲风带来清凉感；'>
+				    <div class="album-card">
+				  <img src='img/AlbumCover/OH.jpg' alt="Mixtape: OH">
+				  <div class="info">
+					<strong>Mixtape: OH</strong>
+					<div class="date">2021-06-26</div>
+				  </div>
+				</div>
+				</a>
+			<!-- ALL IN -->
+				 <a class="album-link" href='DiscographyDetail.html'
+				     data-title='ALL IN'
+				     data-date='2020-10-27'
+				     data-cover='img/AlbumCover/AllIn.jpg'
+				     data-intro='Stray Kids日文正规专辑《ALL IN》上线！'
+				     data-tracks='01 ALL IN|日文主打展现全力投入的态度；'>
+				    <div class="album-card">
+				  <img src='img/AlbumCover/AllIn.jpg' alt="ALL IN">
+				  <div class="info">
+					<strong>ALL IN</strong>
+					<div class="date">2020-10-27</div>
+				  </div>
+				</div>
+				</a>
+			<!-- IN生 -->
+				<a class="album-link" href='DiscographyDetail.html'
+				     data-title='IN生'
+				     data-date='2020-09-14'
+				     data-cover='img/AlbumCover/InLife.jpg'
+				     data-intro='Stray Kids正规一辑改版《IN生》上线！'
+				     data-tracks='01 Back Door|主打曲展现派对氛围；'>
+				    <div class="album-card">
+				  <img src='img/AlbumCover/InLife.jpg' alt="IN生">
+				  <div class="info">
+					<strong>IN生</strong>
+					<div class="date">2020-09-14</div>
+				  </div>
+				</div>
+				</a>
+			<!-- POP OUT BOY! Part 1 -->
+				<a class="album-link" href='DiscographyDetail.html'
+				     data-title='POP OUT BOY! Part 1'
+				     data-date='2020-07-16'
+				     data-cover='img/AlbumCover/PopOutBoy.jpg'
+				     data-intro='Stray Kids参与OST《POP OUT BOY! Part 1》上线！'
+				     data-tracks='01 Hello|青春校园剧OST带来清新感；'>
+				    <div class="album-card">
+				  <img src='img/AlbumCover/PopOutBoy.jpg' alt="POP OUT BOY! Part 1">
+				  <div class="info">
+					<strong>POP OUT BOY! Part 1</strong>
+					<div class="date">2020-07-16</div>
+				  </div>
+				</div>
+				</a>
+			<!-- GO生 -->
+				<a class="album-link" href='DiscographyDetail.html'
+				     data-title='GO生'
+				     data-date='2020-06-17'
+				     data-cover='img/AlbumCover/GoLive.jpg'
+				     data-intro='Stray Kids正规一辑《GO生》上线！'
+				     data-tracks="01 God's Menu|主打曲展现独特音乐风格；">
+				    <div class="album-card">
+				  <img src='img/AlbumCover/GoLive.jpg' alt="GO生">
+				  <div class="info">
+					<strong>GO生</strong>
+					<div class="date">2020-06-17</div>
+				  </div>
+				</div>
+				</a>
+			<!-- TOP -->
+				 <a class="album-link" href='DiscographyDetail.html'
+				     data-title='TOP'
+				     data-date='2020-05-13'
+				     data-cover='img/AlbumCover/Top.jpg'
+				     data-intro='Stray Kids日文单曲《TOP》上线！'
+				     data-tracks='01 TOP|动画《神之塔》主题曲展现热血感；'>
+				    <div class="album-card">
+				  <img src='img/AlbumCover/Top.jpg' alt="TOP">
+				  <div class="info">
+					<strong>TOP</strong>
+					<div class="date">2020-05-13</div>
+				  </div>
+				</div>
+				</a>
+			<!-- Mixtape: On Track -->
+				<a class="album-link" href='DiscographyDetail.html'
+				     data-title='Mixtape: On Track'
+				     data-date='2020-03-25'
+				     data-cover='img/AlbumCover/OnTrack.jpg'
+				     data-intro='Stray Kids特别单曲《On Track》上线！'
+				     data-tracks='01 On Track|温暖旋律带来治愈感；'>
+				    <div class="album-card">
+				  <img src='img/AlbumCover/OnTrack.jpg' alt="Mixtape: On Track">
+				  <div class="info">
+					<strong>Mixtape: On Track</strong>
+					<div class="date">2020-03-25</div>
+				  </div>
+				</div>
+				</a>
+			<!-- SKZ 2020 -->
+				 <a class="album-link" href='DiscographyDetail.html'
+				     data-title='SKZ 2020'
+				     data-date='2020-03-18'
+				     data-cover='img/AlbumCover/SKZ2020.jpg'
+				     data-intro='Stray Kids精选专辑《SKZ 2020》上线！'
+				     data-tracks='01 My Pace|重新混音版本带来新鲜感；'>
+				    <div class="album-card">
+				  <img src='img/AlbumCover/SKZ2020.jpg' alt="SKZ2020">
+				  <div class="info">
+					<strong>SKZ 2020</strong>
+					<div class="date">2020-03-18</div>
+				  </div>
+				</div>
+				</a>
+			<!-- Mixtape: Gone Days -->
+				<a class="album-link" href='DiscographyDetail.html'
+				     data-title='Mixtape: Gone Days'
+				     data-date='2019-12-26'
+				     data-cover='img/AlbumCover/GoneDays.jpg'
+				     data-intro='Stray Kids特别单曲《Gone Days》上线！'
+				     data-tracks='01 Gone Days|回忆过去温暖旋律；'>
+				    <div class="album-card">
+				  <img src='img/AlbumCover/GoneDays.jpg' alt="Mixtape: Gone Days">
+				  <div class="info">
+					<strong>Mixtape: Gone Days</strong>
+					<div class="date">2019-12-26</div>
+				  </div>
+				</div>
+				</a>
+			<!-- Clé : LEVANTER -->
+				<a class="album-link" href='DiscographyDetail.html'
+				     data-title='Clé : LEVANTER'
+				     data-date='2019-12-09'
+				     data-cover='img/AlbumCover/Levanter.jpg'
+				     data-intro='Stray Kids迷你专辑《Clé : LEVANTER》上线！'
+				     data-tracks='01 LEVANTER|主打曲展现自由与希望；'>
+				    <div class="album-card">
+				  <img src='img/AlbumCover/Levanter.jpg' alt="Clé : LEVANTER">
+				  <div class="info">
+					<strong>Clé : LEVANTER</strong>
+					<div class="date">2019-12-09</div>
+				  </div>
+				</div>
+				</a>
+			<!-- Clé 2 : Yellow Wood -->
+				<a class="album-link" href='DiscographyDetail.html'
+				     data-title='Clé 2 : Yellow Wood'
+				     data-date='2019-06-19'
+				     data-cover='img/AlbumCover/YellowWood.jpg'
+				     data-intro='Stray Kids特别专辑《Clé 2 : Yellow Wood》上线！'
+				     data-tracks='01 Side Effects|主打曲展现强烈电子风格；'>
+				    <div class="album-card">
+				  <img src='img/AlbumCover/YellowWood.jpg' alt="Clé 2 : Yellow Wood">
+				  <div class="info">
+					<strong>Clé 2 : Yellow Wood</strong>
+					<div class="date">2019-6-19</div>
+				  </div>
+				</div>
+				</a>
+			<!-- Clé 1 : Miroh -->
+				<a class="album-link" href='DiscographyDetail.html'
+				     data-title='Clé 1 : Miroh'
+				     data-date='2019-03-25'
+				     data-cover='img/AlbumCover/Miroh.jpg'
+				     data-intro='Stray Kids迷你专辑《Clé 1 : Miroh》上线！'
+				     data-tracks='01 Miroh|主打曲展现迷宫般的世界观；'>
+				    <div class="album-card">
+				  <img src='img/AlbumCover/Miroh.jpg' alt="Clé 1 : Miroh">
+				  <div class="info">
+					<strong>Clé 1 : Miroh</strong>
+					<div class="date">2019-03-25</div>
+				  </div>
+				</div>
+				</a>
+			<!-- I am YOU -->
+				<a class="album-link" href='DiscographyDetail.html'
+				     data-title='I am YOU'
+				     data-date='2018-10-22'
+				     data-cover='img/AlbumCover/IamYou.jpg'
+				     data-intro='Stray Kids迷你专辑《I am YOU》上线！'
+				     data-tracks='01 I am YOU|主打曲展现彼此依靠的情感；'>
+				    <div class="album-card">
+				  <img src='img/AlbumCover/IamYou.jpg' alt="I am YOU">
+				  <div class="info">
+					<strong>I am YOU</strong>
+					<div class="date">2018-10-22</div>
+				  </div>
+				</div>
+				</a>
+			<!-- I am WHO -->
+				<a class="album-link" href='DiscographyDetail.html'
+				     data-title='I am WHO'
+				     data-date='2018-08-06'
+				     data-cover='img/AlbumCover/IamWho.jpg'
+				     data-intro='Stray Kids迷你专辑《I am WHO》上线！'
+				     data-tracks='01 My Pace|主打曲展现自我节奏；'>
+				    <div class="album-card">
+				  <img src='img/AlbumCover/IamWho.jpg' alt="I am WHO">
+				  <div class="info">
+					<strong>I am WHO</strong>
+					<div class="date">2018-08-06</div>
+				  </div>
+				</div>
+				</a>
+			<!-- I am NOT -->
+				 <a class="album-link" href='DiscographyDetail.html'
+				     data-title='I am NOT'
+				     data-date='2018-03-26'
+				     data-cover='img/AlbumCover/IamNot.jpg'
+				     data-intro='Stray Kids出道迷你专辑《I am NOT》上线！'
+				     data-tracks='01 District 9|出道主打曲展现强烈风格；'>
+				    <div class="album-card">
+				  <img src='img/AlbumCover/IamNot.jpg' alt="I am NOT">
+				  <div class="info">
+					<strong>I am NOT</strong>
+					<div class="date">2018-03-26</div>
+				  </div>
+				</div>
+				</a>
+			<!-- Mixtape -->
+				<a class="album-link" href='DiscographyDetail.html'
+				     data-title='Mixtape'
+				     data-date='2018-01-08'
+				     data-cover='img/AlbumCover/Mixtape.jpg'
+				     data-intro='Stray Kids出道前Mixtape《Mixtape》上线！'
+				     data-tracks='01 Hellevator|出道前单曲展现独特世界观；'>
+				    <div class="album-card">
+				  <img src='img/AlbumCover/Mixtape.jpg' alt="Mixtape">
+				  <div class="info">
+					<strong>Mixtape</strong>
+					<div class="date">2018-01-08</div>
+				  </div>
+				</div>
+			</a>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+		</section>
+		
+	
+	
+
+	
+<footer>
+  Copyright &copy; JYP ENTERTAINMENT Co., Ltd. All rights reserved.
+</footer>
+
+<script>
+function openNav()  { document.getElementById('mysidenav').style.width = '280px'; }
+function closeNav() { document.getElementById('mysidenav').style.width = '0';   }
+
+document.querySelectorAll('.album-link').forEach(link => {
+  link.onclick = () => {
+    const d = link.dataset;
+    localStorage.setItem('albumData', JSON.stringify({
+      title: d.title,
+      date: d.date,
+      cover: d.cover,
+      intro: d.intro,
+      tracks: d.tracks
+    }));
+    location.href = link.href;
+    return false; // 阻止默认跳转，由 JS 接管
+  };
+});
+
+</script>
+</body>
+</html>

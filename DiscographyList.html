@@ -81,6 +81,8 @@
 			display:grid;
 			grid-template-columns:repeat(auto-fill,minmax(180px,1fr));
 			gap:20px;
+			max-width: 1000px;
+    		margin: 0 auto;
 			}
 		.album-card{
 			background:#fff;
@@ -90,6 +92,7 @@
 			cursor:pointer;
 			transition:transform .3s;
 			width: 100%;
+			aspect-ratio: 1 / 1;
 			height: 100%; 
 			object-fit: cover;
 			}
@@ -97,9 +100,10 @@
 			transform:translateY(-4px);
 			}
 		.album-card img{
-			width:230px;
-			height:230px;
-			object-fit:cover;
+			width: 100%;
+   			height: 100%;
+			object-fit: cover; /* 裁剪填充，防止变形 */
+    		display: block;
 			
 			}
 		.album-card .info{
@@ -1668,6 +1672,7 @@ document.querySelectorAll('.album-link').forEach(link => {
 </body>
 
 </html>
+
 
 
 

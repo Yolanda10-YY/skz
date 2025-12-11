@@ -174,9 +174,18 @@
 		  text-align:left;    /* 文字左对齐 */
 		  margin-top: 150px;
 		}
-		@media(max-width:768px){
+		@media(max-width:360px){
 		  .main{flex-direction:column;}
 		  .left,.right{flex:1 1 100%;}
+			html { font-size: 13px; }
+		}
+		/* 新增：文字自适应屏幕大小 */
+		html {
+		    font-size: clamp(14px, 1.4vw, 28px);
+		}
+		h1, h2, h3, .band-name, .tracklist li, .intro {
+		    word-break: break-word;
+		    overflow-wrap: break-word;
 		}
 		
 		.intro {
@@ -313,3 +322,4 @@
 		</script>
 </body>
 </html>
+
